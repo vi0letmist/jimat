@@ -22,6 +22,7 @@
                     <div class="links">
                         <a href="/admin/manageadmins">Manage Admins</a>
                         <a href="/admin/uploads">Upload</a>
+                        <a href="/orders">Upload</a>
                     </div>
                 </div>
                 </div>

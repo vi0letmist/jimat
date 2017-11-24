@@ -21,7 +21,13 @@
                     <p>{{ $message }}</p>
                 </div>
             @endif
-
+            <div class="row">
+                <div class="col-lg-12 margin-tb">
+                    <div class="pull-left mb-1">
+                        <a class="btn btn-success" href="/admin"> Home</a>
+                    </div>
+                </div>
+            </div>
             <br/>
             <table id="table_uploads" class="table table-bordered table-striped">
                 <thead>
@@ -30,7 +36,7 @@
                         <th>Name</th>
                         <th>Fruit</th>
                         <th>Quantity</th>
-
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +46,7 @@
                             <td>{{ $order->name }}</td>
                             <td>{{ $order->fruit }}</td>
                             <td>{{ $order->quantity }}</td>
+
 
                             <td>
                                 <a class="btn btn-info" href="{{ route('orders.show',$order->id) }}">Detail</a>

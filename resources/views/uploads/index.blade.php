@@ -41,6 +41,7 @@
 						<th>Name</th>
 						<th>Price</th>
 						<th>Unit</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
