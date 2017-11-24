@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('home', 'HomeController');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('about', function () {
     return view('about');
@@ -41,12 +40,13 @@ Route::get('coba2', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/users/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+Route::post('/users/logout','Auth\LoginController@userLogout')->name('user.logout');
 
 Route::prefix('admin')->group(function() {
   Route::resource('manageadmins','ManageAdminController');
+  Route::resource('uploads','UploadController');
   Route::get('/', 'AdminController@index')->name('admin.dashboard');
   Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
   Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
@@ -60,6 +60,8 @@ Route::prefix('admin')->group(function() {
   Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 });
 
-Route::get('upload',['as'=>'upload.index','uses'=>'UploadController@index']);
-Route::get('upload/create',['as'=>'upload.create','uses'=>'UploadController@create']);
-Route::post('upload',['as'=>'upload.store','uses'=>'UploadController@store']);
+Route::resource('orders','OrderController');
+
+// Route::get('/upload',['as'=>'upload.index','uses'=>'UploadController@index']);
+// Route::get('/upload/create',['as'=>'upload.create','uses'=>'UploadController@create']);
+// Route::post('/upload',['as'=>'upload.store','uses'=>'UploadController@store']);

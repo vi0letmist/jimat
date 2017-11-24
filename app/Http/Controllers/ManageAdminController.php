@@ -44,11 +44,11 @@ class ManageAdminController extends Controller
     {
         $this->validate($request, [
             'name'=>'required',
-            'email'=>'required|mail|unique:users,email',
+            'email'=>'required',//|mail|unique:users,email',
             'password'=>'required|min:6|same:confirm-password',
             ]);
 
-        $input=$required->all();
+        $input=$request->all();
         $input['password']=Hash::make($input['password']);
 
         $admin = Admin::create($input);

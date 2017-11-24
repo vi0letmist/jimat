@@ -18,7 +18,12 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">ADMIN Dashboard</div>
-                    You are logged in as <strong>ADMIN</strong>!
+                <div class="content">
+                    <div class="links">
+                        <a href="/admin/manageadmins">Manage Admins</a>
+                        <a href="/admin/uploads">Upload</a>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

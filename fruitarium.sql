@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2017 at 06:36 PM
+-- Generation Time: Nov 24, 2017 at 04:59 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -41,7 +41,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Achis', 'achisrizal@gmail.com', '$2y$10$TN9/2zSodTiStQmcmdHRHeHD2vWcDztkPFBA9kqgU.WWx3YesM3W.', NULL, '2017-11-20 10:18:16', '2017-11-20 10:18:16');
+(1, 'Achis', 'achisrizal@gmail.com', '$2y$10$TN9/2zSodTiStQmcmdHRHeHD2vWcDztkPFBA9kqgU.WWx3YesM3W.', NULL, '2017-11-20 10:18:16', '2017-11-20 10:18:16'),
+(2, 'Rizal', 'htmpth0@gmail.com', '$2y$10$/YlE6C1SKcQbdLTmf5BxDO5/Jz7weYMN4H..oizALVWpot934.v1a', NULL, '2017-11-20 21:29:11', '2017-11-20 22:19:53');
 
 -- --------------------------------------------------------
 
@@ -62,7 +63,26 @@ CREATE TABLE `migrations` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2017_11_18_073526_create_admins_table', 1);
+(3, '2017_11_18_073526_create_admins_table', 1),
+(4, '2017_11_21_100928_create_upload_user_table', 2),
+(5, '2017_11_23_080829_create_orders_table', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(10) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `fruit` varchar(11) NOT NULL,
+  `quantity` int(10) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -90,7 +110,7 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 --
 
 CREATE TABLE `uploads` (
-  `id` int(11) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `image` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` int(10) NOT NULL,
@@ -104,7 +124,8 @@ CREATE TABLE `uploads` (
 --
 
 INSERT INTO `uploads` (`id`, `image`, `name`, `price`, `unit`, `created_at`, `updated_at`) VALUES
-(2, 'image_1511185115.jpg', 'anggur', 10000, 'kilogram', '2017-11-20 06:38:36', '2017-11-20 06:38:36');
+(1, 'image_1511246227.jpg', 'Anggur', 15000, 'kilogram', '2017-11-21 13:27:35', '2017-11-21 06:27:35'),
+(2, 'image_1511281512.jpg', 'Apel', 8000, 'kilogram', '2017-11-21 09:25:12', '2017-11-21 09:25:12');
 
 -- --------------------------------------------------------
 
@@ -116,9 +137,9 @@ CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hp` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -128,8 +149,8 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `hp`, `alamat`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'achis', 'achisrizal@gmail.com', '$2y$10$epNgfqCeJhSkxxMXGZ8Gx.IjzysCp1oHr1rxH9Xt.caGfdaxCDj66', '', '', 'U3eHXvVOco4WXXwBkPO215xsuKekyqZHJhi5aGc932UZ1Lu4ZR6Fr6EThemz', '2017-11-18 07:58:40', '2017-11-18 07:58:40');
+INSERT INTO `users` (`id`, `name`, `email`, `phone`, `address`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'achis', 'achisrizal@gmail.com', '', '', '$2y$10$epNgfqCeJhSkxxMXGZ8Gx.IjzysCp1oHr1rxH9Xt.caGfdaxCDj66', 'P7anFw1fIxVrfX3TZLRODOyJa26RV59lkM1At9Te00h862Vu0NY8bHJB9p8u', '2017-11-18 07:58:40', '2017-11-18 07:58:40');
 
 --
 -- Indexes for dumped tables
@@ -146,6 +167,12 @@ ALTER TABLE `admins`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -180,12 +207,17 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `uploads`
 --
 ALTER TABLE `uploads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `users`
 --

@@ -9,13 +9,17 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function uploads()
+    {
+        return $this->belongToMany(Upload::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email','phone', 'address', 'password',
     ];
 
     /**

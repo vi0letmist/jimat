@@ -24,6 +24,9 @@
 
 			<div class="row">
 				<div class="col-lg-12 margin-tb">
+					<div class="pull-left mb-1">
+						<a class="btn btn-success" href="/admin"> Home</a>
+					</div>
 					<div class="pull-right mb-1">
 						<a class="btn btn-success" href="{{route('manageadmins.create')}}"> Create Account</a>
 					</div>

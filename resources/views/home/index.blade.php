@@ -42,7 +42,7 @@
                             <td>{{ $upload->price }}</td>
                             <td>{{ $upload->unit }}</td>
                             <td>
-                                <a class="btn btn-info" href="{{ route('show',$upload->id) }}">Detail</a>
+                                <a class="btn btn-info" href="{{ route('home.show',$upload->id) }}">Detail</a>
                                 <a class="btn btn-success" href="{{route('orders.create')}}">Order</a>
                             </td>
                         </tr>

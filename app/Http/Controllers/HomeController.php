@@ -3,26 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use App\Http\Controllers\Controller;
+use App\Upload;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+    public function index(Request $request)
     {
-        $this->middleware('auth');
+        $uploads=Upload::orderBy('id','DESC')->paginate(5);
+        return view('home.index',compact('uploads'))->with('i',($request->input('page',1)-1)*5);
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function show($id)
     {
-        return view('home');
+        $upload=Upload::find($id);
+        return view('home.show',compact('upload'));
     }
 }

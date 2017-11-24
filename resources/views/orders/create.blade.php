@@ -16,7 +16,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h1>Create Image</h1>
+			<h1>Create Order</h1>
 			@if (count($errors) > 0)
 			<div class="alert alert-danger">
 				<strong>Sorry!</strong> Something wrong with your input data.<br><br>
@@ -28,14 +28,8 @@
 			</div>
 			@endif
 
-			{!! Form::open(array('route' => 'uploads.store','method'=>'POST', 'files'=>true)) !!}
+			{!! Form::open(array('route' => 'orders.store','method'=>'POST')) !!}
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="form-group">
-						<strong>Image :</strong>
-						{!! Form::file('image', null, array('class' => 'custom-file-control')) !!}
-					</div>
-				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Name :</strong>
@@ -44,14 +38,26 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Price :</strong>
-						{!! Form::text('price', null, array('placeholder' => 'Price','class' => 'form-control')) !!}
+						<strong>Phone :</strong>
+						{!! Form::text('phone', null, array('placeholder' => 'Phone','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Unit :</strong>
-						{!! Form::text('unit', null, array('placeholder' => 'Unit','class' => 'form-control')) !!}
+						<strong>Address :</strong>
+						{!! Form::text('address', null, array('placeholder' => 'Address','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Fruit :</strong>
+						{!! Form::text('fruit', null, array('placeholder' => 'Fruit','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Quantity :</strong>
+						{!! Form::text('quantity', null, array('placeholder' => 'Quantity','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

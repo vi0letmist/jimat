@@ -27,29 +27,31 @@
                 <thead>
                     <tr>
                         <!-- <th>Number</th> -->
-                        <th>Image</th>
                         <th>Name</th>
-                        <th>Price</th>
-                        <th>Unit</th>
+                        <th>Fruit</th>
+                        <th>Quantity</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($uploads as $key => $upload)
+                    @foreach ($orders as $key => $order)
                         <tr>
                             <!-- <td>{{ ++$i }}</td> -->
-                            <td><img width="100" src="{{ URL::to('/uploads/' . $upload->image) }}" alt="{{ $upload->name }}" /></td>
-                            <td>{{ $upload->name }}</td>
-                            <td>{{ $upload->price }}</td>
-                            <td>{{ $upload->unit }}</td>
+                            <td>{{ $order->name }}</td>
+                            <td>{{ $order->fruit }}</td>
+                            <td>{{ $order->quantity }}</td>
+
                             <td>
-                                <a class="btn btn-info" href="{{ route('show',$upload->id) }}">Detail</a>
-                                <a class="btn btn-success" href="{{route('orders.create')}}">Order</a>
+                                <a class="btn btn-info" href="{{ route('orders.show',$order->id) }}">Detail</a>
+                                {!! Form::open(['method' => 'DELETE','route' => ['orders.destroy', $order->id],'style'=>'display:inline']) !!}
+                                {!! Form::submit('Delete', ['class' => 'btn btndanger']) !!}
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            {!! $uploads->render() !!}
+            {!! $orders->render() !!}
         </div>
     </div>
 </div>
