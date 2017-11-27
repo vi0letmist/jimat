@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2017 at 04:59 AM
+-- Generation Time: Nov 27, 2017 at 12:29 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `busa`
+-- Database: `fruitarium`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE `admins` (
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Achis', 'achisrizal@gmail.com', '$2y$10$TN9/2zSodTiStQmcmdHRHeHD2vWcDztkPFBA9kqgU.WWx3YesM3W.', NULL, '2017-11-20 10:18:16', '2017-11-20 10:18:16'),
-(2, 'Rizal', 'htmpth0@gmail.com', '$2y$10$/YlE6C1SKcQbdLTmf5BxDO5/Jz7weYMN4H..oizALVWpot934.v1a', NULL, '2017-11-20 21:29:11', '2017-11-20 22:19:53');
+(4, 'rizal m', 'htmpth0@gmail.com', '$2y$10$.y5hi8X7SDClwUhQhDPStOU8Imz2h/OGJByzvVWyopROZ8xTqCqt.', NULL, '2017-11-23 21:21:25', '2017-11-23 23:36:18');
 
 -- --------------------------------------------------------
 
@@ -83,6 +83,13 @@ CREATE TABLE `orders` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `name`, `phone`, `address`, `fruit`, `quantity`, `created_at`, `updated_at`) VALUES
+(1, 'achis', '085707755770', 'Gelanggang Mahasiswa UGM', 'apel', 5, '2017-11-23 23:33:42', '2017-11-23 23:33:42');
 
 -- --------------------------------------------------------
 
@@ -125,7 +132,8 @@ CREATE TABLE `uploads` (
 
 INSERT INTO `uploads` (`id`, `image`, `name`, `price`, `unit`, `created_at`, `updated_at`) VALUES
 (1, 'image_1511246227.jpg', 'Anggur', 15000, 'kilogram', '2017-11-21 13:27:35', '2017-11-21 06:27:35'),
-(2, 'image_1511281512.jpg', 'Apel', 8000, 'kilogram', '2017-11-21 09:25:12', '2017-11-21 09:25:12');
+(3, 'image_1511497398.jpg', 'apel', 12000, 'kilogram', '2017-11-24 04:23:34', '2017-11-23 21:23:34'),
+(4, 'image_1511505478.jpg', 'strawberry', 10000, 'kilogram', '2017-11-23 23:37:58', '2017-11-23 23:37:58');
 
 -- --------------------------------------------------------
 
@@ -202,7 +210,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -212,12 +220,12 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `uploads`
 --
 ALTER TABLE `uploads`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --
