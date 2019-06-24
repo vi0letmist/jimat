@@ -11,7 +11,7 @@
 |
 */
 
-Route::resource('home', 'HomeController');
+//Route::resource('home', 'HomeController');
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('about', function () {
@@ -45,9 +45,6 @@ Auth::routes();
 Route::post('/users/logout','Auth\LoginController@userLogout')->name('user.logout');
 
 Route::prefix('admin')->group(function() {
-  Route::resource('manageadmins','ManageAdminController');
-  Route::resource('uploads','UploadController');
-  Route::get('/', 'AdminController@index')->name('admin.dashboard');
   Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
   Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
   Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
@@ -58,8 +55,15 @@ Route::prefix('admin')->group(function() {
   Route::get('/password/reset', 'Auth\AdminForgotPasswordController@showLinkRequestForm')->name('admin.password.request');
   Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
   Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
-});
 
+  Route::get('/', 'AdminController@index')->name('admin.dashboard');
+  Route::resource('manageadmins','ManageAdminController');
+  Route::resource('uploads','UploadController');
+  Route::resource('manageBarang','ManageBarangController');
+  Route::resource('manajemen-kategori','ManageKategoriController');
+  Route::resource('manajemen-kios','ManageKiosController');
+
+});
 Route::resource('orders','OrderController');
 
 // Route::get('/upload',['as'=>'upload.index','uses'=>'UploadController@index']);

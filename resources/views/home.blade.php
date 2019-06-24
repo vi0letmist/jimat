@@ -22,7 +22,7 @@
                 </div>
             @endif
 
-            <br/>
+            <!-- <br/>
             <table id="table_uploads" class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -49,7 +49,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {!! $uploads->render() !!}
+            {!! $uploads->render() !!} -->
         </div>
     </div>
 </div>

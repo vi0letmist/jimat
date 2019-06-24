@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
-use App\Upload;
+use App\Kategori;
 
 class HomeController extends Controller
 {
@@ -15,8 +15,8 @@ class HomeController extends Controller
 
     public function index(Request $request)
     {
-        $uploads=Upload::orderBy('id','DESC')->paginate(5);
-        return view('home.index',compact('uploads'))->with('i',($request->input('page',1)-1)*5);
+        $kategori=Kategori::orderBy('id_kategori','DESC')->paginate(5);
+        return view('managekategori.index',compact('kategori'))->with('i',($request->input('page',1)-1)*5);
     }
 
     public function show($id)

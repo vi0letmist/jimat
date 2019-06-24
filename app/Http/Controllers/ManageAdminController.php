@@ -21,7 +21,7 @@ class ManageAdminController extends Controller
     public function index(Request $request)
     {
         $admins=Admin::orderBy('id','DESC')->paginate(5);
-        return view('manageadmins.index',compact('admins'))->with('i',($request->input('page',1)-1)*5);
+        return view('admin.manageadmin.index',compact('admins'))->with('i',($request->input('page',1)-1)*5);
     }
 
     /**
@@ -31,7 +31,7 @@ class ManageAdminController extends Controller
      */
     public function create()
     {
-        return view('manageadmins.create');
+        return view('admin.manageadmin.create');
     }
 
     /**
@@ -53,7 +53,7 @@ class ManageAdminController extends Controller
 
         $admin = Admin::create($input);
 
-        return redirect()->route('manageadmins.index')->with('success','Admin Successfully added');
+        return redirect()->route('admin.manageadmin.index')->with('success','Admin Successfully added');
     }
 
     /**
@@ -65,7 +65,7 @@ class ManageAdminController extends Controller
     public function show($id)
     {
         $admin = Admin::find($id);
-        return view('manageadmins.show', compact('admin'));
+        return view('admin.manageadmin.show', compact('admin'));
     }
 
     /**
@@ -77,7 +77,7 @@ class ManageAdminController extends Controller
     public function edit($id)
     {
         $admin=Admin::find($id);
-        return view('manageadmins.edit',compact('admin'));
+        return view('admin.manageadmin.edit',compact('admin'));
     }
 
     /**
@@ -105,7 +105,7 @@ class ManageAdminController extends Controller
     $admin = Admin::find($id);
     $admin->update($input);
 
-    return redirect()->route('manageadmins.index')
+    return redirect()->route('admin.manageadmin.index')
     ->with('success','Admin successfully updated');
     }
 
@@ -118,7 +118,7 @@ class ManageAdminController extends Controller
     public function destroy($id)
     {
         Admin::find($id)->delete();
-        return redirect()->route('manageadmins.index')
+        return redirect()->route('admin.manageadmin.index')
         ->with('success','Admin successfully deleted');
     }
 }
