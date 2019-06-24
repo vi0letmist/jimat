@@ -3,17 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Admin;
+use App\Konsumen;
 
 class ManageKonsumenController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $konsumen=Konsumen::orderBy('id_konsumen','DESC')->paginate(5);
+        // return view('admin.managekategori.index',compact('kategori'))->with('i',($request->input('page',1)-1)*5);
+        return view('admin.managekonsumen.index',compact('konsumen'))->with('i',($request->input('page',1)-1)*5);
     }
 
     /**
@@ -23,7 +32,7 @@ class ManageKonsumenController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.managekonsumen.create');
     }
 
     /**
@@ -34,7 +43,18 @@ class ManageKonsumenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required',
+            'password' => 'required',
+            'email' => 'required',
+            'no_hp' => 'required',
+        ]);
+
+        $input = $request->all();
+        
+        $konsumen = Konsumen::create($input);
+        return redirect()->route('admin.managekonsumen.index')
+        ->with('Sukses','Konsumen berhasil ditambahkan');
     }
 
     /**
@@ -43,9 +63,10 @@ class ManageKonsumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_konsumen)
     {
-        //
+        $konsumen = Konsumen::find($id_konsumen);
+        return view('admin.managekonsumen.show', compact('konsumen'));
     }
 
     /**
@@ -54,9 +75,10 @@ class ManageKonsumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_konsumen)
     {
-        //
+        $konsumen=Konsumen::find($id_konsumen);
+        return view('admin.managekonsumen.edit',compact('konsumen'));
     }
 
     /**
@@ -66,9 +88,23 @@ class ManageKonsumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_konsumen)
     {
-        //
+        $this->validate($request, [
+            'nama' => 'required',
+            'password' => 'required',
+            'email' => 'required',
+            'no_hp' => 'required',
+            
+        ]);
+    
+            $input = $request->all();
+            
+            $konsumen = Konsumen::find($id_konsumen);
+            $konsumen -> update($input);
+    
+            return redirect()->route('admin.managekonsumen.index')
+            ->with('Sukses','Konsumen berhasil diubah');
     }
 
     /**
@@ -77,8 +113,10 @@ class ManageKonsumenController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_konsumen)
     {
-        //
+        Konsumen::find($id_konsumen)->delete();
+        return redirect()->route('admin.managekonsumen.index')
+        ->with('Sukses','Konsumen berhasil dihapus');
     }
 }

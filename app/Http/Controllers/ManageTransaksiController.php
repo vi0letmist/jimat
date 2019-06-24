@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Admin;
+use App\Transaksi;
 
 class ManageTransaksiController extends Controller
 {

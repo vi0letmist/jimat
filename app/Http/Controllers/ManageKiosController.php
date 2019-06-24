@@ -90,7 +90,7 @@ class ManageKiosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_kios)
     {
         $this->validate($request, [
             'nama_kategori' => 'required',
@@ -116,7 +116,7 @@ class ManageKiosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_kios)
     {
         Kios::find($id_kios)->delete();
         return redirect()->route('admin.managekios.index')

@@ -15,7 +15,7 @@
         </ul>
     </li>
     <li><a href="/admin/manajemen-kios"><i class="fa fa-link"></i> <span>Manajemen Kios</span></a></li>
-    <li><a href="konsumen"><i class="fa fa-link"></i> <span>Manajemen Konsumen</span></a></li>
-    <li><a href="transaksi"><i class="fa fa-link"></i> <span>Manajemen Transaksi</span></a></li>
+    <li><a href="/admin/manajemen-konsumen"><i class="fa fa-link"></i> <span>Manajemen Konsumen</span></a></li>
+    <li><a href="/admin/manajemen-transaksi"><i class="fa fa-link"></i> <span>Manajemen Transaksi</span></a></li>
     <li><a href="/admin/manageadmins"><i class="fa fa-link"></i> <span>Manajemen Admin</span></a></li>
 </ul>
