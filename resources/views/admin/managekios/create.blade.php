@@ -30,6 +30,12 @@
 
 			{!! Form::open(array('route' => 'manajemen-kios.store','method'=>'POST', 'files'=>true)) !!}
 			<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>ID Kios :</strong>
+						{!! Form::text('id_kios', null, array('placeholder' => 'ID Kios','class' => 'form-control')) !!}
+					</div>
+				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Nama Kios :</strong>
@@ -64,6 +70,30 @@
 					<div class="form-group">
 						<strong>Alamat :</strong>
 						{!! Form::text('alamat', null, array('placeholder' => 'Alamat','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Status Buka :</strong>
+						{!! Form::text('status_buka', null, array('placeholder' => 'Status Buka','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Longitude :</strong>
+						{!! Form::text('longitude', null, array('placeholder' => 'Longitude','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Latitude :</strong>
+						{!! Form::text('latitude', null, array('placeholder' => 'Latitude','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>ID Admin Koperasi :</strong>
+						{!! Form::text('id_adminkoperasi', null, array('placeholder' => 'ID Admin Koperasi','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

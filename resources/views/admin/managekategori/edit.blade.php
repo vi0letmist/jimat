@@ -27,30 +27,18 @@
 			</div>
 			@endif
 
-			{!! Form::model($upload, ['method' => 'PATCH','route' => ['uploads.update', $upload->id]]) !!}
+			{!! Form::model($kategori, ['method' => 'PATCH','route' => ['manajemen-kategori.update', $kategori->id_kategori]]) !!}
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12">
+			<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Image :</strong>
-						<img width="250" src="{{ URL::to('/uploads/' . $upload->image) }}" alt="{{ $upload->name }}" />
+						<strong>ID Kategori</strong>
+						{!! Form::text('id_kategori', null, array('class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Name :</strong>
-						{!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="form-group">
-						<strong>Price :</strong>
-						{!! Form::text('price', null, array('placeholder' => 'Price','class' => 'form-control')) !!}
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="form-group">
-						<strong>Unit :</strong>
-						{!! Form::text('unit', null, array('placeholder' => 'Unit','class' => 'form-control')) !!}
+						<strong>Nama Kategori</strong>
+						{!! Form::text('nama_kategori', null, array('class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -28,38 +28,33 @@
 			</div>
 			@endif
 
-			{!! Form::open(array('route' => 'manajemen-konsumen.store','method'=>'POST', 'files'=>true)) !!}
+			{!! Form::open(array('route' => 'manajemen-transaksi.store','method'=>'POST', 'files'=>true)) !!}
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>ID Konsumen:</strong>
-						{!! Form::text('id_konsumen', null, array('placeholder' => 'ID Konsumen','class' => 'form-control')) !!}
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="form-group">
-						<strong>Nama Konsumen:</strong>
-						{!! Form::text('nama', null, array('placeholder' => 'Nama Konsumen','class' => 'form-control')) !!}
+						<strong>Total :</strong>
+						{!! Form::text('total', null, array('placeholder' => 'Total','class' => 'form-control')) !!}
 					</div>
 				</div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Email :</strong>
-						{!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
+						<strong>Sub Total :</strong>
+						{!! Form::text('subtotal', null, array('placeholder' => 'Sub Total','class' => 'form-control')) !!}
 					</div>
 				</div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Password :</strong>
-						{!! Form::password('password', null, array('placeholder' => 'Password','class' => 'form-control')) !!}
+						<strong>Status :</strong>
+						{!! Form::text('status', null, array('placeholder' => 'Status','class' => 'form-control')) !!}
 					</div>
 				</div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>No HP :</strong>
-						{!! Form::text('no_hp', null, array('placeholder' => 'No HP','class' => 'form-control')) !!}
+						<strong>Tanggal :</strong>
+						{!! Form::text('tanggal', null, array('placeholder' => 'Tanggal','class' => 'form-control')) !!}
 					</div>
 				</div>
+                
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</div>

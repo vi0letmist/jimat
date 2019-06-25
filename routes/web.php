@@ -63,6 +63,7 @@ Route::prefix('admin')->group(function() {
   Route::resource('manajemen-kategori','ManageKategoriController');
   Route::resource('manajemen-kios','ManageKiosController');
   Route::resource('manajemen-konsumen','ManageKonsumenController');
+  Route::resource('manajemen-transaksi','ManageTransaksiController');
 
 });
 Route::resource('orders','OrderController');

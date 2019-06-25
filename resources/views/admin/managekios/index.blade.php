@@ -39,11 +39,12 @@
 						<th>Nama Kios</th>
                         <th>Nama Pemilik</th>
                         <th>Email</th>
+						<th>Password</th>
                         <th>No HP</th>
                         <th>Alamat</th>
                         <th>Status Buka</th>
-						<th>Created at</th>
-						<th>Updated at</th>
+						<th>Longitude</th>
+						<th>Latitude</th>
 
 					</tr>
 				</thead>
@@ -54,11 +55,12 @@
 							<td>{{ $key->nama_kios }}</td>
                             <td>{{ $key->nama_pemilik }}</td>
                             <td>{{ $key->email }}</td>
+							<td>{{ $key->password }}</td>
                             <td>{{ $key->no_hp }}</td>
                             <td>{{ $key->alamat }}</td>
                             <td>{{ $key->status_buka }}</td>
-							<td>{{ $key->created_at }}</td>
-							<td>{{ $key->updated_at }}</td>
+							<td>{{ $key->longitude }}</td>
+							<td>{{ $key->latitude }}</td>
 
 							<td>
 								

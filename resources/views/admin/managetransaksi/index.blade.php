@@ -15,7 +15,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h1>Konsumen</h1>
+			<h1>Transaksi</h1>
 			@if ($message = Session::get('success'))
 				<div class="alert alert-success">
 					<p>{{ $message }}</p>
@@ -27,35 +27,35 @@
 						<a class="btn btn-success" href="/admin"> Home</a>
 					</div> -->
 					<div class="pull-right mb-1">
-						<a class="btn btn-success" href="{{ route('manajemen-konsumen.create') }}"> Tambah</a>
+						<a class="btn btn-success" href="{{ route('manajemen-transaksi.create') }}"> Tambah</a>
 					</div>
 				</div>
 			</div>
 			<br/>
-			<table id="table_konsumen" class="table table-bordered table-striped">
+			<table id="table_transaksi" class="table table-bordered table-striped">
 				<thead>
 					<tr>
 						<th>No.</th>
-						<th>Nama</th>
-                        <th>Email</th>
-						<th>Password</th>
-                        <th>No HP</th>
+						<th>Total</th>
+                        <th>Subtotal</th>
+                        <th>Status</th>
+                        <th>Tanggal</th>
 
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($konsumen as $key)
+					@foreach ($transaksi as $key)
 						<tr>
 							<td>{{ ++$i }}</td>
-                            <td>{{ $key->nama }}</td>
-                            <td>{{ $key->email }}</td>
-							<td>{{ $key->password }}</td>
-                            <td>{{ $key->no_hp }}</td>
+                            <td>{{ $key->total }}</td>
+                            <td>{{ $key->subtotal }}</td>
+                            <td>{{ $key->status }}</td>
+                            <td>{{ $key->tanggal }}</td>
 
 							<td>
 								
-								<a class="btn btn-primary" href="{{ route('manajemen-konsumen.edit',$key->id_konsumen) }}">Edit</a>
-								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-konsumen.destroy', $key->id_konsumen],'style'=>'display:inline']) !!}
+								<a class="btn btn-primary" href="{{ route('manajemen-transaksi.edit',$key->id_order) }}">Edit</a>
+								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-transaksi.destroy', $key->id_order],'style'=>'display:inline']) !!}
 								{!! Form::submit('Delete', ['class' => 'btn btndanger']) !!}
 								{!! Form::close() !!}
 							</td>
@@ -63,7 +63,7 @@
 					@endforeach
 				</tbody>
 			</table>
-			{!! $konsumen->render() !!}
+			{!! $transaksi->render() !!}
 		</div>
 	</div>
 </div>

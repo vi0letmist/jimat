@@ -8,5 +8,7 @@ class Konsumen extends Model
 {
     protected $guard = 'admin';
 	protected $table = 'konsumen';
-	public $fillable = [''];
+	public $fillable = ['id_konsumen','password','nama','email','no_hp'];
+	protected $primaryKey='id_konsumen';
+	public $timestamps = false;
 }

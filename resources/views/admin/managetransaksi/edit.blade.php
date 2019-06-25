@@ -6,7 +6,6 @@
 	document.getElementById('logout-form').submit();">
 	Logout
 </a>
-
 <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
 	{{ csrf_field() }}
 </form>
@@ -16,7 +15,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h1>Create New Konsumen</h1>
+			<h1>Edit Description</h1>
 			@if (count($errors) > 0)
 			<div class="alert alert-danger">
 				<strong>Sorry!</strong> Something wrong with your input data.<br><br>
@@ -28,36 +27,30 @@
 			</div>
 			@endif
 
-			{!! Form::open(array('route' => 'manajemen-konsumen.store','method'=>'POST', 'files'=>true)) !!}
+			{!! Form::model($transaksi, ['method' => 'PATCH','route' => ['manajemen-kategori.update', $transaksi->id_order]]) !!}
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>ID Konsumen:</strong>
-						{!! Form::text('id_konsumen', null, array('placeholder' => 'ID Konsumen','class' => 'form-control')) !!}
+						<strong>Total :</strong>
+						{!! Form::text('total', null, array('placeholder' => 'Total','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Nama Konsumen:</strong>
-						{!! Form::text('nama', null, array('placeholder' => 'Nama Konsumen','class' => 'form-control')) !!}
+						<strong>Sub Total :</strong>
+						{!! Form::text('subtotal', null, array('placeholder' => 'Sub Total','class' => 'form-control')) !!}
 					</div>
 				</div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Email :</strong>
-						{!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
+						<strong>Status :</strong>
+						{!! Form::text('status', null, array('placeholder' => 'Status','class' => 'form-control')) !!}
 					</div>
 				</div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Password :</strong>
-						{!! Form::password('password', null, array('placeholder' => 'Password','class' => 'form-control')) !!}
-					</div>
-				</div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="form-group">
-						<strong>No HP :</strong>
-						{!! Form::text('no_hp', null, array('placeholder' => 'No HP','class' => 'form-control')) !!}
+						<strong>Tanggal :</strong>
+						{!! Form::text('tanggal', null, array('placeholder' => 'Tanggal','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

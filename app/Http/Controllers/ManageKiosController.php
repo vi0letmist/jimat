@@ -55,7 +55,7 @@ class ManageKiosController extends Controller
         $input = $request->all();
         
         $kios = Kios::create($input);
-        return redirect()->route('admin.managekios.index')
+        return redirect()->route('manajemen-kios.index')
         ->with('Sukses','Kios berhasil ditambahkan');
     }
 
@@ -106,7 +106,7 @@ class ManageKiosController extends Controller
             $kios = Kios::find($id_kios);
             $kios -> update($input);
     
-            return redirect()->route('admin.managekios.index')
+            return redirect()->route('manajemen-kios.index')
             ->with('Sukses','Kios berhasil diubah');
     }
 
@@ -119,7 +119,7 @@ class ManageKiosController extends Controller
     public function destroy($id_kios)
     {
         Kios::find($id_kios)->delete();
-        return redirect()->route('admin.managekios.index')
+        return redirect()->route('manajemen-kios.index')
         ->with('Sukses','Kios berhasil dihapus');
     }
 }

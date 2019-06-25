@@ -53,7 +53,7 @@ class ManageKonsumenController extends Controller
         $input = $request->all();
         
         $konsumen = Konsumen::create($input);
-        return redirect()->route('admin.managekonsumen.index')
+        return redirect()->route('manajemen-konsumen.index')
         ->with('Sukses','Konsumen berhasil ditambahkan');
     }
 
@@ -103,7 +103,7 @@ class ManageKonsumenController extends Controller
             $konsumen = Konsumen::find($id_konsumen);
             $konsumen -> update($input);
     
-            return redirect()->route('admin.managekonsumen.index')
+            return redirect()->route('manajemen-konsumen.index')
             ->with('Sukses','Konsumen berhasil diubah');
     }
 
@@ -116,7 +116,7 @@ class ManageKonsumenController extends Controller
     public function destroy($id_konsumen)
     {
         Konsumen::find($id_konsumen)->delete();
-        return redirect()->route('admin.managekonsumen.index')
+        return redirect()->route('manajemen-konsumen.index')
         ->with('Sukses','Konsumen berhasil dihapus');
     }
 }

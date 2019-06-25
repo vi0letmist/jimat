@@ -27,30 +27,30 @@
 			</div>
 			@endif
 
-			{!! Form::model($upload, ['method' => 'PATCH','route' => ['uploads.update', $upload->id]]) !!}
+			{!! Form::model($konsumen, ['method' => 'PATCH','route' => ['manajemen-konsumen.update', $konsumen->id_konsumen]]) !!}
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Image :</strong>
-						<img width="250" src="{{ URL::to('/uploads/' . $upload->image) }}" alt="{{ $upload->name }}" />
+						<strong>Nama Konsumen:</strong>
+						{!! Form::text('nama', null, array('placeholder' => 'Nama Konsumen','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Name :</strong>
-						{!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+						<strong>Email :</strong>
+						{!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Price :</strong>
-						{!! Form::text('price', null, array('placeholder' => 'Price','class' => 'form-control')) !!}
+						<strong>Password :</strong>
+						{!! Form::password('password', null, array('placeholder' => 'Password','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Unit :</strong>
-						{!! Form::text('unit', null, array('placeholder' => 'Unit','class' => 'form-control')) !!}
+						<strong>No HP :</strong>
+						{!! Form::text('no_hp', null, array('placeholder' => 'No HP','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

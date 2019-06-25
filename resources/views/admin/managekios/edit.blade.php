@@ -27,30 +27,42 @@
 			</div>
 			@endif
 
-			{!! Form::model($upload, ['method' => 'PATCH','route' => ['uploads.update', $upload->id]]) !!}
+			{!! Form::model($kios, ['method' => 'PATCH','route' => ['manajemen-kios.update', $kios->id_kios]]) !!}
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12">
+			<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Image :</strong>
-						<img width="250" src="{{ URL::to('/uploads/' . $upload->image) }}" alt="{{ $upload->name }}" />
+						<strong>Nama Kios :</strong>
+						{!! Form::text('nama_kios', null, array('placeholder' => 'Nama Kios','class' => 'form-control')) !!}
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Name :</strong>
-						{!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
+						<strong>Nama Pemilik :</strong>
+						{!! Form::text('nama_pemilik', null, array('placeholder' => 'Nama Pemilik','class' => 'form-control')) !!}
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Price :</strong>
-						{!! Form::text('price', null, array('placeholder' => 'Price','class' => 'form-control')) !!}
+						<strong>Email :</strong>
+						{!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Unit :</strong>
-						{!! Form::text('unit', null, array('placeholder' => 'Unit','class' => 'form-control')) !!}
+						<strong>Password :</strong>
+						{!! Form::password('password', null, array('placeholder' => 'Password','class' => 'form-control')) !!}
+					</div>
+				</div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>No HP :</strong>
+						{!! Form::text('no_hp', null, array('placeholder' => 'No HP','class' => 'form-control')) !!}
+					</div>
+				</div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Alamat :</strong>
+						{!! Form::text('alamat', null, array('placeholder' => 'Alamat','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">
