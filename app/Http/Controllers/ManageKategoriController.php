@@ -52,7 +52,7 @@ class ManageKategoriController extends Controller
         $input = $request->all();
         
         $kategori = Kategori::create($input);
-        return redirect()->route('admin.managekategori.index')
+        return redirect()->route('manajemen-kategori.index')
         ->with('Sukses','Kategori berhasil ditambahkan');
     }
 
@@ -98,7 +98,7 @@ class ManageKategoriController extends Controller
             $kategori = Kategori::find($id_kategori);
             $kategori -> update($input);
     
-            return redirect()->route('admin.managekategori.index')
+            return redirect()->route('manajemen-kategori.index')
             ->with('Sukses','Kategori berhasil diubah');
     }
 
@@ -111,7 +111,7 @@ class ManageKategoriController extends Controller
     public function destroy($id_kategori)
     {
         Kategori::find($id_kategori)->delete();
-        return redirect()->route('admin.managekategori.index')
+        return redirect()->route('manajemen-kategori.index')
         ->with('Sukses','Kategori berhasil dihapus');
     }
 }

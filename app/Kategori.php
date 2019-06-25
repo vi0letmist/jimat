@@ -10,4 +10,5 @@ class Kategori extends Model
     protected $table = 'kategori';
     public $fillable = ['id_kategori', 'nama_kategori'];
     protected $primaryKey='id_kategori';
+    public $timestamps = false;
 }
