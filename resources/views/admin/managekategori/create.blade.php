@@ -28,7 +28,7 @@
 			</div>
 			@endif
 
-			{!! Form::open(array('route' => 'manajemen-barang.store','method'=>'POST', 'files'=>true)) !!}
+			{!! Form::open(array('route' => 'manajemen-produk.store','method'=>'POST', 'files'=>true)) !!}
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">

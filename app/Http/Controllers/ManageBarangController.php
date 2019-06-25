@@ -50,7 +50,7 @@ class ManageBarangController extends Controller
         $input = $request->all();
         
         $barang = Barang::create($input);
-        return redirect()->route('managebarang.index')
+        return redirect()->route('manajemen-produk.index')
         ->with('Sukses','Produk berhasil ditambahkan');
     }
 
@@ -98,7 +98,7 @@ class ManageBarangController extends Controller
             $barang = Barang::find($id_produkkoperasi);
             $barang -> update($input);
     
-            return redirect()->route('managebarang.index')
+            return redirect()->route('manajemen-produk.index')
             ->with('Sukses','Produk berhasil diubah');
     }
 
@@ -112,7 +112,7 @@ class ManageBarangController extends Controller
     {
         
         Barang::find($id_produkkoperasi)->delete();
-        return redirect()->route('managebarang.index')
+        return redirect()->route('manajemen-produk.index')
         ->with('Sukses','Produk berhasil dihapus');
     }
 }

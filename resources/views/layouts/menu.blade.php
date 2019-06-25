@@ -10,7 +10,7 @@
         </a>
         <ul class="treeview-menu">
         <li><a href="/admin/manajemen-kategori">Kategori</a></li>
-        <li><a href="produk">Produk</a></li>
+        <li><a href="/admin/manajemen-produk">Produk</a></li>
         <li><a href="merk">Merk</a></li>
         </ul>
     </li>

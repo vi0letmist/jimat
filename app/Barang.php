@@ -9,5 +9,6 @@ class Barang extends Model
     protected $guard = 'admin';
 	protected $table = 'produk_koperasi';
 	public $fillable = ['gambar','nama_produk'];
+	protected $primaryKey='id_produkkoperasi';
 	public $timestamps = false;
 }
