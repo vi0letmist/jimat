@@ -11,6 +11,12 @@
 </form>
 @endsection
 
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Produk</h1>
+</section>
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
@@ -45,6 +51,12 @@
 					<div class="form-group">
 						<strong>ID Kategori</strong>
 						{!! Form::text('id_kategori', null, array('class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Gambar :</strong>
+						{!! Form::file('gambar', null, array('class' => 'custom-file-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

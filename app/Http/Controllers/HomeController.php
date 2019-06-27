@@ -16,12 +16,6 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $kategori=Kategori::orderBy('id_kategori','DESC')->paginate(5);
-        return view('managekategori.index',compact('kategori'))->with('i',($request->input('page',1)-1)*5);
-    }
-
-    public function show($id)
-    {
-        $upload=Upload::find($id);
-        return view('home.show',compact('upload'));
+        return view('/admin');
     }
 }

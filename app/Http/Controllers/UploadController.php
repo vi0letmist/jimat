@@ -115,7 +115,6 @@ class UploadController extends Controller
         $input['image'] = $imageName;
         }
         
-
         $upload = Upload::find($id);
         $upload -> update($input);
 

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('logout')
 <a href="{{ route('admin.logout') }}"
@@ -12,11 +12,17 @@
 </form>
 @endsection
 
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Kategori</h1>
+</section>
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h1>Create Image</h1>
+			<h1>Tambah Kategori</h1>
 			@if (count($errors) > 0)
 			<div class="alert alert-danger">
 				<strong>Sorry!</strong> Something wrong with your input data.<br><br>
@@ -28,18 +34,18 @@
 			</div>
 			@endif
 
-			{!! Form::open(array('route' => 'manajemen-produk.store','method'=>'POST', 'files'=>true)) !!}
+			{!! Form::open(array('route' => 'manajemen-kategori.store','method'=>'POST', 'files'=>true)) !!}
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Image :</strong>
-						{!! Form::file('gambar', null, array('class' => 'custom-file-control')) !!}
+						<strong>ID Kategori :</strong>
+						{!! Form::text('id_kategori', null, array('placeholder' => 'ID Kategori','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Nama Produk :</strong>
-						{!! Form::text('nama_produk', null, array('placeholder' => 'Nama Produk','class' => 'form-control')) !!}
+						<strong>Nama Kategori :</strong>
+						{!! Form::text('nama_kategori', null, array('placeholder' => 'Nama Kategori','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

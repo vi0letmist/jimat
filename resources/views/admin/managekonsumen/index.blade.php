@@ -11,6 +11,12 @@
 </form>
 @endsection
 
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Konsumen</h1>
+</section>
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
@@ -35,25 +41,26 @@
 			<table id="table_konsumen" class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>No.</th>
-						<th>Nama</th>
-                        <th>Email</th>
-						<th>Password</th>
-                        <th>No HP</th>
+						<th style="text-align:center">No.</th>
+						<th style="text-align:center">Nama</th>
+                        <th style="text-align:center">Email</th>
+						<th style="text-align:center">Password</th>
+						<th style="text-align:center">No HP</th>
+						<th style="text-align:center">Opsi</th>
 
 					</tr>
 				</thead>
 				<tbody>
 					@foreach ($konsumen as $key)
 						<tr>
-							<td>{{ ++$i }}</td>
+							<td style="text-align:center">{{ ++$i }}</td>
                             <td>{{ $key->nama }}</td>
                             <td>{{ $key->email }}</td>
 							<td>{{ $key->password }}</td>
                             <td>{{ $key->no_hp }}</td>
 
-							<td>
-								
+							<td style="text-align:center">
+								<a class="btn btn-info" href="{{ route('manajemen-konsumen.show',$key->id_konsumen) }}">Detail</a>
 								<a class="btn btn-primary" href="{{ route('manajemen-konsumen.edit',$key->id_konsumen) }}">Edit</a>
 								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-konsumen.destroy', $key->id_konsumen],'style'=>'display:inline']) !!}
 								{!! Form::submit('Delete', ['class' => 'btn btndanger']) !!}

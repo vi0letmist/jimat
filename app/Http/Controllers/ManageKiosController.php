@@ -93,7 +93,7 @@ class ManageKiosController extends Controller
     public function update(Request $request, $id_kios)
     {
         $this->validate($request, [
-            'nama_kategori' => 'required',
+            'nama_kios' => 'required',
             'nama_pemilik' => 'required',
             'password' => 'required',
             'email' => 'required',

@@ -11,6 +11,12 @@
 </form>
 @endsection
 
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Transaksi</h1>
+</section>
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
@@ -21,39 +27,29 @@
 					<p>{{ $message }}</p>
 				</div>
 			@endif
-			<div class="row">
-				<div class="col-lg-12 margin-tb">
-					<!-- <div class="pull-left mb-1">
-						<a class="btn btn-success" href="/admin"> Home</a>
-					</div> -->
-					<div class="pull-right mb-1">
-						<a class="btn btn-success" href="{{ route('manajemen-transaksi.create') }}"> Tambah</a>
-					</div>
-				</div>
-			</div>
 			<br/>
 			<table id="table_transaksi" class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>No.</th>
-						<th>Total</th>
-                        <th>Subtotal</th>
-                        <th>Status</th>
-                        <th>Tanggal</th>
-
+						<th style="text-align:center">No.</th>
+						<th style="text-align:center">Total</th>
+                        <th style="text-align:center">Subtotal</th>
+                        <th style="text-align:center">Status</th>
+						<th style="text-align:center">Tanggal</th>
+						<th style="text-align:center">Opsi</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach ($transaksi as $key)
 						<tr>
-							<td>{{ ++$i }}</td>
+							<td style="text-align:center">{{ ++$i }}</td>
                             <td>{{ $key->total }}</td>
                             <td>{{ $key->subtotal }}</td>
                             <td>{{ $key->status }}</td>
                             <td>{{ $key->tanggal }}</td>
 
-							<td>
-								
+							<td style="text-align:center">
+								<a class="btn btn-info" href="{{ route('manajemen-transaksi.show',$key->id_order) }}">Ddetail</a>
 								<a class="btn btn-primary" href="{{ route('manajemen-transaksi.edit',$key->id_order) }}">Edit</a>
 								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-transaksi.destroy', $key->id_order],'style'=>'display:inline']) !!}
 								{!! Form::submit('Delete', ['class' => 'btn btndanger']) !!}

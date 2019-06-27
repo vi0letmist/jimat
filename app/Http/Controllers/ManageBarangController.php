@@ -45,9 +45,18 @@ class ManageBarangController extends Controller
         $this->validate($request, [
             'nama_produk' => 'required',
             'gambar' => 'required',
+            'id_kategori' => 'required',
         ]);
 
         $input = $request->all();
+        $imageName = '';
+        if ($request->hasFile('image')) {
+        $imageExtension = $request->file('image')->getClientOriginalExtension();
+        $imageName = 'image_'.time().'.'.$imageExtension;
+        $imageDestination = base_path() . '/public/uploads';
+        $request->file('image')->move($imageDestination, $imageName);
+        $input['image'] = $imageName;
+        }
         
         $barang = Barang::create($input);
         return redirect()->route('manajemen-produk.index')
@@ -90,16 +99,24 @@ class ManageBarangController extends Controller
         $this->validate($request, [
             'nama_produk' => 'required',
             'gambar' => 'required',
-            
+            'id_kategori' => 'required',
         ]);
     
-            $input = $request->all();
-            
-            $barang = Barang::find($id_produkkoperasi);
-            $barang -> update($input);
-    
-            return redirect()->route('manajemen-produk.index')
-            ->with('Sukses','Produk berhasil diubah');
+        $input = $request->all();
+        $imageName = '';
+        if ($request->hasFile('image')) {
+        $imageExtension = $request->file('image')->getClientOriginalExtension();
+        $imageName = 'image_'.time().'.'.$imageExtension;
+        $imageDestination = base_path() . '/public/uploads';
+        $request->file('image')->move($imageDestination, $imageName);
+        $input['image'] = $imageName;
+        }
+        
+        $barang = Barang::find($id_produkkoperasi);
+        $barang -> update($input);
+
+        return redirect()->route('manajemen-produk.index')
+        ->with('Sukses','Produk berhasil diubah');
     }
 
     /**

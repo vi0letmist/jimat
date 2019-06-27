@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('logout')
 <a href="{{ route('admin.logout') }}"
@@ -9,6 +9,12 @@
 <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
 	{{ csrf_field() }}
 </form>
+@endsection
+
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Admin</h1>
+</section>
 @endsection
 
 @section('content')
@@ -27,7 +33,7 @@
 			</div>
 			@endif
 
-			{!! Form::model($admin, ['method' => 'PATCH','route' => ['manageadmins.update', $admin->id]]) !!}
+			{!! Form::model($admin, ['method' => 'PATCH','route' => ['manajemen-admin.update', $admin->id]]) !!}
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">

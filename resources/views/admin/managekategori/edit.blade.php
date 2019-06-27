@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('logout')
 <a href="{{ route('admin.logout') }}"
@@ -9,6 +9,12 @@
 <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
 	{{ csrf_field() }}
 </form>
+@endsection
+
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Kategori</h1>
+</section>
 @endsection
 
 @section('content')

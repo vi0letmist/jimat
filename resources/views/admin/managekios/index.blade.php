@@ -11,6 +11,12 @@
 </form>
 @endsection
 
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Kios</h1>
+</section>
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
@@ -35,23 +41,23 @@
 			<table id="table_kios" class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>No.</th>
-						<th>Nama Kios</th>
-                        <th>Nama Pemilik</th>
-                        <th>Email</th>
-						<th>Password</th>
-                        <th>No HP</th>
-                        <th>Alamat</th>
-                        <th>Status Buka</th>
-						<th>Longitude</th>
-						<th>Latitude</th>
-
+						<th style="text-align:center">No.</th>
+						<th style="text-align:center">Nama Kios</th>
+                        <th style="text-align:center">Nama Pemilik</th>
+                        <th style="text-align:center">Email</th>
+						<th style="text-align:center">Password</th>
+                        <th style="text-align:center">No HP</th>
+                        <th style="text-align:center">Alamat</th>
+                        <th style="text-align:center">Status Buka</th>
+						<th style="text-align:center">Longitude</th>
+						<th style="text-align:center">Latitude</th>
+						<th style="text-align:center">Opsi</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach ($kios as $key)
 						<tr>
-							<td>{{ ++$i }}</td>
+							<td style="text-align:center">{{ ++$i }}</td>
 							<td>{{ $key->nama_kios }}</td>
                             <td>{{ $key->nama_pemilik }}</td>
                             <td>{{ $key->email }}</td>
@@ -62,8 +68,8 @@
 							<td>{{ $key->longitude }}</td>
 							<td>{{ $key->latitude }}</td>
 
-							<td>
-								
+							<td style="text-align:center">
+								<a class="btn btn-info" href="{{ route('manajemen-kios.show', $key->id_kios) }}">Detail</a>
 								<a class="btn btn-primary" href="{{ route('manajemen-kios.edit',$key->id_kios) }}">Edit</a>
 								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-kios.destroy', $key->id_kios],'style'=>'display:inline']) !!}
 								{!! Form::submit('Delete', ['class' => 'btn btndanger']) !!}

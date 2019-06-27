@@ -11,6 +11,12 @@
 </form>
 @endsection
 
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Kategori</h1>
+</section>
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
@@ -34,18 +40,18 @@
 			<br/>
 			<table id="table_kategori" class="table table-bordered table-striped">
 				<thead>
-					<tr>
-						<th>No.</th>
-						<th>Nama Kategori</th>
+					<tr >
+						<th style="text-align:center">No.</th>
+						<th style="text-align:center">Nama Kategori</th>
+						<th style="text-align:center">Opsi</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach ($kategori as $key)
 						<tr>
-							<td>{{ ++$i }}</td>
+							<td style="text-align:center">{{ ++$i }}</td>
 							<td>{{ $key->nama_kategori }}</td>
-							<td>
-								
+							<td style="text-align:center">
 								<a class="btn btn-primary" href="{{ route('manajemen-kategori.edit',$key->id_kategori) }}">Edit</a>
 								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-kategori.destroy', $key->id_kategori],'style'=>'display:inline']) !!}
 								{!! Form::submit('Delete', ['class' => 'btn btndanger']) !!}

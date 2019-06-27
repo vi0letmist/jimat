@@ -12,7 +12,7 @@
 */
 
 //Route::resource('home', 'HomeController');
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'AdminController@index')->name('admin.dashboard');
 
 Route::get('about', function () {
     return view('about');
@@ -57,9 +57,9 @@ Route::prefix('admin')->group(function() {
   Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 
   Route::get('/', 'AdminController@index')->name('admin.dashboard');
-  Route::resource('manageadmins','ManageAdminController');
+  Route::resource('manajemen-admin','ManageAdminController');
   Route::resource('uploads','UploadController');
-  Route::resource('manageBarang','ManageBarangController');
+  Route::resource('manajemen-produk','ManageBarangController');
   Route::resource('manajemen-kategori','ManageKategoriController');
   Route::resource('manajemen-kios','ManageKiosController');
   Route::resource('manajemen-konsumen','ManageKonsumenController');

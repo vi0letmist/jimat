@@ -11,6 +11,12 @@
 </form>
 @endsection
 
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Produk</h1>
+</section>
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">
@@ -27,7 +33,7 @@
 						<a class="btn btn-success" href="/admin"> Home</a>
 					</div> -->
 					<div class="pull-right mb-1">
-						<a class="btn btn-success" href="{{ route('manajemen-kategori.create') }}"> Tambah</a>
+						<a class="btn btn-success" href="{{ route('manajemen-produk.create') }}"> Tambah</a>
 					</div>
 				</div>
 			</div>
@@ -35,19 +41,20 @@
 			<table id="table_produk" class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>No.</th>
-						<th>Nama Produk</th>
-                        <th>Gambar</th>
+						<th style="text-align:center">No.</th>
+						<th style="text-align:center">Gambar</th>
+						<th style="text-align:center">Nama Produk</th>
+						<th style="text-align:center">Opsi</th>
 					</tr>
 				</thead>
 				<tbody>
 					@foreach ($barang as $key)
 						<tr>
-							<td>{{ ++$i }}</td>
+							<td style="text-align:center">{{ ++$i }}</td>
+							<td><img width="100" src="{{ URL::to('/uploads/' . $key->gambar) }}" alt="{{ $key->nama_produk }}" /></td>
 							<td>{{ $key->nama_produk }}</td>
-                            <td>{{ $key->gambar }}</td>
-							<td>
-								
+							<td style="text-align:center">
+								<a class="btn btn-info" href="{{ route('manajemen-produk.show',$key->id_produkkoperasi) }}">Detail</a>
 								<a class="btn btn-primary" href="{{ route('manajemen-produk.edit',$key->id_produkkoperasi) }}">Edit</a>
 								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-produk.destroy', $key->id_koperasi],'style'=>'display:inline']) !!}
 								{!! Form::submit('Delete', ['class' => 'btn btndanger']) !!}

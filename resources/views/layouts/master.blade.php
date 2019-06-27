@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>G-Mart | Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="{{ asset('lte/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
@@ -21,6 +21,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
   <link rel="stylesheet" href="{{ asset('lte/dist/css/skins/skin-blue.min.css') }}">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="{{ asset('lte/bower_components/morris.js/morris.css') }}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -129,16 +131,7 @@ desired effect
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
+    @yield('header')
 
     <!-- Main content -->
     <section class="content container-fluid">
@@ -250,9 +243,95 @@ desired effect
 <script src="{{ asset('lte/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('lte/dist/js/adminlte.min.js') }}"></script>
+<!-- Morris.js charts -->
+<script src="{{ asset('lte/bower_components/raphael/raphael.min.js') }}"></script>
+<script src="{{ asset('lte/bower_components/morris.js/morris.min.js') }}"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+     <script>
+  $(function () {
+    "use strict";
+
+    // AREA CHART
+    var area = new Morris.Area({
+      element: 'revenue-chart',
+      resize: true,
+      data: [
+        {y: '2011 Q1', item1: 2666},
+        {y: '2011 Q2', item1: 2778},
+        {y: '2011 Q3', item1: 4912},
+        {y: '2011 Q4', item1: 3767},
+        {y: '2012 Q1', item1: 6810},
+        {y: '2012 Q2', item1: 5670},
+        {y: '2012 Q3', item1: 4820},
+        {y: '2012 Q4', item1: 15073},
+        {y: '2013 Q1', item1: 10687},
+        {y: '2013 Q2', item1: 8432}
+      ],
+      xkey: 'y',
+      ykeys: ['item1'],
+      labels: ['Item 1'],
+      lineColors: ['#3c8dbc'],
+      hideHover: 'auto'
+    });
+
+    // LINE CHART
+    var line = new Morris.Line({
+      element: 'line-chart',
+      resize: true,
+      data: [
+        {y: '2011 Q1', item1: 2666},
+        {y: '2011 Q2', item1: 2778},
+        {y: '2011 Q3', item1: 4912},
+        {y: '2011 Q4', item1: 3767},
+        {y: '2012 Q1', item1: 6810},
+        {y: '2012 Q2', item1: 5670},
+        {y: '2012 Q3', item1: 4820},
+        {y: '2012 Q4', item1: 15073},
+        {y: '2013 Q1', item1: 10687},
+        {y: '2013 Q2', item1: 8432}
+      ],
+      xkey: 'y',
+      ykeys: ['item1'],
+      labels: ['Item 1'],
+      lineColors: ['#3c8dbc'],
+      hideHover: 'auto'
+    });
+
+    //DONUT CHART
+    var donut = new Morris.Donut({
+      element: 'sales-chart',
+      resize: true,
+      colors: ["#3c8dbc", "#f56954", "#00a65a"],
+      data: [
+        {label: "Download Sales", value: 12},
+        {label: "In-Store Sales", value: 30},
+        {label: "Mail-Order Sales", value: 20}
+      ],
+      hideHover: 'auto'
+    });
+    //BAR CHART
+    var bar = new Morris.Bar({
+      element: 'bar-chart',
+      resize: true,
+      data: [
+        {y: '2006', a: 100, b: 90},
+        {y: '2007', a: 75, b: 65},
+        {y: '2008', a: 50, b: 40},
+        {y: '2009', a: 75, b: 65},
+        {y: '2010', a: 50, b: 40},
+        {y: '2011', a: 75, b: 65},
+        {y: '2012', a: 100, b: 90}
+      ],
+      barColors: ['#00a65a', '#f56954'],
+      xkey: 'y',
+      ykeys: ['a', 'b'],
+      labels: ['CPU', 'DISK'],
+      hideHover: 'auto'
+    });
+  });
+</script>
 </body>
 </html>

@@ -11,6 +11,12 @@
 </form>
 @endsection
 
+@section('header')
+<section class="content-header">
+  <h1>Manajemen Kios</h1>
+</section>
+@endsection
+
 @section('content')
 <div class="container">
 	<div class="row">

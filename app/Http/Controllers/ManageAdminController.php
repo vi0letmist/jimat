@@ -53,7 +53,7 @@ class ManageAdminController extends Controller
 
         $admin = Admin::create($input);
 
-        return redirect()->route('admin.manageadmin.index')->with('success','Admin Successfully added');
+        return redirect()->route('manajemen-admin.index')->with('success','Admin Successfully added');
     }
 
     /**
@@ -118,7 +118,7 @@ class ManageAdminController extends Controller
     public function destroy($id)
     {
         Admin::find($id)->delete();
-        return redirect()->route('admin.manageadmin.index')
+        return redirect()->route('manajemen-admin.index')
         ->with('success','Admin successfully deleted');
     }
 }
