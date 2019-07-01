@@ -22,9 +22,9 @@ class ManageKategoriController extends Controller
     
     public function index(Request $request)
     {
-        $kategori=Kategori::orderBy('id_kategori','DESC')->paginate(5);
+        $kategori=Kategori::orderBy('id_kategori','DESC')->paginate();
         // return view('admin.managekategori.index',compact('kategori'))->with('i',($request->input('page',1)-1)*5);
-        return view('admin.managekategori.index',compact('kategori'))->with('i',($request->input('page',1)-1)*5);
+        return view('admin.managekategori.index',compact('kategori'))->with('i',($request->input('page',1)-1));
     }
 
     /**

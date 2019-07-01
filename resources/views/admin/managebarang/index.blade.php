@@ -1,5 +1,6 @@
 @extends('layouts.master')
 
+
 @section('logout')
 <a href="{{ route('admin.logout') }}"
 	onclick="event.preventDefault();
@@ -18,7 +19,7 @@
 @endsection
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<h1>Kategori</h1>
@@ -29,9 +30,21 @@
 			@endif
 			<div class="row">
 				<div class="col-lg-12 margin-tb">
-					<!-- <div class="pull-left mb-1">
-						<a class="btn btn-success" href="/admin"> Home</a>
-					</div> -->
+				
+					<div class="pull-left mb-1">
+						<div class="input-group-btn">
+                  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Kategori
+                    			<span class="fa fa-caret-down"></span></button>
+                  			<ul class="dropdown-menu">
+                    			<li><a href="#">Sembako</a></li>
+                    			<li><a href="#">Minuman</a></li>
+								<li><a href="#">Makanan</a></li>
+								<li><a href="#">Alat Mandi dan Cucu</a></li>
+								<li><a href="#">Gas</a></li>
+								<li><a href="#">Galon</a></li>
+                  			</ul>
+						</div>
+					</div>
 					<div class="pull-right mb-1">
 						<a class="btn btn-success" href="{{ route('manajemen-produk.create') }}"> Tambah</a>
 					</div>
@@ -43,7 +56,7 @@
 					<tr>
 						<th style="text-align:center">No.</th>
 						<th style="text-align:center">Gambar</th>
-						<th style="text-align:center">Nama Produk</th>
+						<th style="text-align:center">Nama</th>
 						<th style="text-align:center">Opsi</th>
 					</tr>
 				</thead>
@@ -64,6 +77,7 @@
 					@endforeach
 				</tbody>
 			</table>
+			{{ $barang->links() }}
 			{!! $barang->render() !!}
 		</div>
 	</div>

@@ -56,6 +56,7 @@ Route::prefix('admin')->group(function() {
   Route::post('/password/reset', 'Auth\AdminResetPasswordController@reset');
   Route::get('/password/reset/{token}', 'Auth\AdminResetPasswordController@showResetForm')->name('admin.password.reset');
 
+  
   Route::get('/', 'AdminController@index')->name('admin.dashboard');
   Route::resource('manajemen-admin','ManageAdminController');
   Route::resource('uploads','UploadController');
@@ -64,7 +65,7 @@ Route::prefix('admin')->group(function() {
   Route::resource('manajemen-kios','ManageKiosController');
   Route::resource('manajemen-konsumen','ManageKonsumenController');
   Route::resource('manajemen-transaksi','ManageTransaksiController');
-  Route::resource('manajemen-produk','ManageBarangController');
+  Route::resource('manajemen-produk','ManageBarangController');  
 
 });
 Route::resource('orders','OrderController');

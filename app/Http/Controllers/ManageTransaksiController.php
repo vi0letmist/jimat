@@ -20,8 +20,8 @@ class ManageTransaksiController extends Controller
      */
     public function index(Request $request)
     {
-        $transaksi=Transaksi::orderBy('id_order','DESC')->paginate(5);
-        return view('admin.managetransaksi.index',compact('transaksi'))->with('i',($request->input('page',1)-1)*5);
+        $transaksi=Transaksi::orderBy('id_order','DESC')->paginate();
+        return view('admin.managetransaksi.index',compact('transaksi'))->with('i',($request->input('page',1)-1));
     }
 
     /**

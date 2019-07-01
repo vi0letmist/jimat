@@ -20,9 +20,9 @@ class ManageKiosController extends Controller
      */
     public function index(Request $request)
     {
-        $kios=Kios::orderBy('id_kios','DESC')->paginate(5);
+        $kios=Kios::orderBy('id_kios','DESC')->paginate();
         // return view('admin.managekategori.index',compact('kategori'))->with('i',($request->input('page',1)-1)*5);
-        return view('admin.managekios.index',compact('kios'))->with('i',($request->input('page',1)-1)*5);
+        return view('admin.managekios.index',compact('kios'))->with('i',($request->input('page',1)-1));
     }
 
     /**

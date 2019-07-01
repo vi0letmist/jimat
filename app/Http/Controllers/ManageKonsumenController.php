@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Admin;
 use App\Konsumen;
+use Illuminate\Support\Facades\DB;
 
 class ManageKonsumenController extends Controller
 {
@@ -20,10 +21,18 @@ class ManageKonsumenController extends Controller
      */
     public function index(Request $request)
     {
-        $konsumen=Konsumen::orderBy('id_konsumen','DESC')->paginate(5);
+        $konsumen = Konsumen::orderBy('id_konsumen','DESC')->paginate();
+        
         // return view('admin.managekategori.index',compact('kategori'))->with('i',($request->input('page',1)-1)*5);
-        return view('admin.managekonsumen.index',compact('konsumen'))->with('i',($request->input('page',1)-1)*5);
+        return view('admin.managekonsumen.index',compact('konsumen'))->with('i',($request->input('page',1)-1));
     }
+    public function search(Request $request)
+	{
+		$konsumen = Konsumen::when($request->keyword, function ($query) use ($request) {
+            $query->where('nama', 'like', "%{$request->keyword}%");
+        })->paginate(5);
+        return view('konsumen.search',compact('konsumen'))->with('i',($request->input('page',1)-1)*5);
+	}
 
     /**
      * Show the form for creating a new resource.

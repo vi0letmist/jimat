@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Admin;
 use App\Barang;
+use App\Kategori;
+use Illuminate\Support\Facades\DB;
 
 class ManageBarangController extends Controller
 {
@@ -20,10 +22,9 @@ class ManageBarangController extends Controller
      */
     public function index(Request $request)
     {
-        $barang=Barang::orderBy('id_produkkoperasi','DESC')->paginate(5);
-        return view('admin.managebarang.index',compact('barang'))->with('i',($request->input('page',1)-1)*5);
+        $barang=Barang::orderBy('id_produkkoperasi','DESC')->paginate();
+        return view('admin.managebarang.index',compact('barang'))->with('i',($request->input('page',1)-1));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -74,7 +75,6 @@ class ManageBarangController extends Controller
         $barang = Barang::find($id_produkkoperasi);
         return view('admin.managebarang.show', compact('barang'));
     }
-
     /**
      * Show the form for editing the specified resource.
      *
