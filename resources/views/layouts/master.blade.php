@@ -343,7 +343,7 @@ desired effect
 <script>
   $(function () {
     $('#example1').DataTable()
-    $('#table_konsumen, #table_produk, #table_kios, #table_kategori').DataTable({
+    $('#table_konsumen, #table_produk, #table_kios, #table_kategori, #table_transaksi').DataTable({
       'paging'      : true,
       'lengthChange': false,
       'searching'   : true,
