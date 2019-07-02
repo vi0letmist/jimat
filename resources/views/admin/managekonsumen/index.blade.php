@@ -14,6 +14,10 @@
 @section('header')
 <section class="content-header">
   <h1>Manajemen Konsumen</h1>
+  <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manajemen Konsumen</li>
+      </ol>
 </section>
 @endsection
 
@@ -21,7 +25,10 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			<h1>Konsumen</h1>
+		<div class="box">
+            <div class="box-header">
+			</div>
+			<div class="box-body">
 			@if ($message = Session::get('success'))
 				<div class="alert alert-success">
 					<p>{{ $message }}</p>
@@ -38,7 +45,7 @@
 				</div>
 			</div>
 			<br/>
-			<table id="table_konsumen" class="table table-bordered table-striped">
+			<table id="table_konsumen" class="table table-bordered table-hover">
 				<thead>
 					<tr>
 						<th style="text-align:center">No.</th>
@@ -69,8 +76,7 @@
 						</tr>
 					@endforeach
 				</tbody>
-			</table>
-			{{ $konsumen->links() }}
+			</table></div>
 			{!! $konsumen->render() !!}
 		</div>
 	</div>

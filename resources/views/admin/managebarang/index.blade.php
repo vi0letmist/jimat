@@ -15,6 +15,11 @@
 @section('header')
 <section class="content-header">
   <h1>Manajemen Produk</h1>
+  <ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li><a href="#">Manejemen Produk</a></li>
+        <li class="active">Manajemen Barang</li>
+      </ol>
 </section>
 @endsection
 
@@ -22,7 +27,10 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h1>Kategori</h1>
+		<div class="box">
+            <div class="box-header">
+			</div>
+			<div class="box-body">
 			@if ($message = Session::get('success'))
 				<div class="alert alert-success">
 					<p>{{ $message }}</p>
@@ -31,27 +39,13 @@
 			<div class="row">
 				<div class="col-lg-12 margin-tb">
 				
-					<div class="pull-left mb-1">
-						<div class="input-group-btn">
-                  			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Kategori
-                    			<span class="fa fa-caret-down"></span></button>
-                  			<ul class="dropdown-menu">
-                    			<li><a href="#">Sembako</a></li>
-                    			<li><a href="#">Minuman</a></li>
-								<li><a href="#">Makanan</a></li>
-								<li><a href="#">Alat Mandi dan Cucu</a></li>
-								<li><a href="#">Gas</a></li>
-								<li><a href="#">Galon</a></li>
-                  			</ul>
-						</div>
-					</div>
 					<div class="pull-right mb-1">
 						<a class="btn btn-success" href="{{ route('manajemen-produk.create') }}"> Tambah</a>
 					</div>
 				</div>
 			</div>
 			<br/>
-			<table id="table_produk" class="table table-bordered table-striped">
+			<table id="table_produk" class="table table-bordered table-hover">
 				<thead>
 					<tr>
 						<th style="text-align:center">No.</th>
@@ -76,8 +70,7 @@
 						</tr>
 					@endforeach
 				</tbody>
-			</table>
-			{{ $barang->links() }}
+			</table></div>
 			{!! $barang->render() !!}
 		</div>
 	</div>

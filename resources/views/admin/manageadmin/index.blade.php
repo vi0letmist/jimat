@@ -14,6 +14,10 @@
 @section('header')
 <section class="content-header">
   <h1>Manajemen Admin</h1>
+  <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Manajemen Admin</li>
+      </ol>
 </section>
 @endsection
 
@@ -21,6 +25,10 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
+		<div class="box">
+            <div class="box-header">
+			</div>
+			<div class="box-body">
 			@if ($message = Session::get('success'))
 			<div class="alert alert-success">
 				<p>{{ $message }}</p>
@@ -35,7 +43,7 @@
 				</div>
 			</div>
 			<br/>
-			<table id="table_admins" class="table table-bordered table-striped">
+			<table id="table_admins" class="table table-bordered table-hover">
 				<thead>
 				<tr>
 					<th style="text-align:center">No.</th>
@@ -60,7 +68,7 @@
 					</tr>
 					@endforeach
 				</tbody>
-			</table>
+			</table></div>
 			{!! $admins->render() !!}
 		</div>
 	</div>

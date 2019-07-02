@@ -14,6 +14,11 @@
 @section('header')
 <section class="content-header">
   <h1>Manajemen Kategori</h1>
+  <ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li><a href="#">Manajemen Produk</a></li>
+        <li class="active">Manajemen Kategori</li>
+      </ol>
 </section>
 @endsection
 
@@ -21,7 +26,10 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<h1>Kategori</h1>
+		<div class="box">
+            <div class="box-header">
+			</div>
+			<div class="box-body">
 			@if ($message = Session::get('success'))
 				<div class="alert alert-success">
 					<p>{{ $message }}</p>
@@ -60,7 +68,7 @@
 						</tr>
 					@endforeach
 				</tbody>
-			</table>
+			</table></div>
 			{!! $kategori->render() !!}
 		</div>
 	</div>

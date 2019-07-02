@@ -343,13 +343,13 @@ desired effect
 <script>
   $(function () {
     $('#example1').DataTable()
-    $('#table_konsumen, #table_produk, #table_kios, #table_kategori, #table_transaksi').DataTable({
+    $('#table_konsumen, #table_produk, #table_kios, #table_kategori, #table_transaksi, #table_admins').DataTable({
       'paging'      : true,
-      'lengthChange': false,
+      'lengthChange': true,
       'searching'   : true,
       'ordering'    : true,
       'info'        : true,
-      'autoWidth'   : false
+      'autoWidth'   : true
     })
   })
 </script>
