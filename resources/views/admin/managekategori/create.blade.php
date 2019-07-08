@@ -48,6 +48,12 @@
 						{!! Form::text('nama_kategori', null, array('placeholder' => 'Nama Kategori','class' => 'form-control')) !!}
 					</div>
 				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>ID Admin :</strong>
+						{!! Form::text('id_admin', null, array('placeholder' => 'ID Admin','class' => 'form-control')) !!}
+					</div>
+				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</div>

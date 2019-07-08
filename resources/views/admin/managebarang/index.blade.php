@@ -51,6 +51,8 @@
 						<th style="text-align:center">No.</th>
 						<th style="text-align:center">Gambar</th>
 						<th style="text-align:center">Nama</th>
+						<th style="text-align:center">Merk</th>
+						<th style="text-align:center">Harga_koperasi</th>
 						<th style="text-align:center">Opsi</th>
 					</tr>
 				</thead>
@@ -60,6 +62,8 @@
 							<td style="text-align:center">{{ ++$i }}</td>
 							<td><img width="100" src="{{ URL::to('/uploads/' . $key->gambar) }}" alt="{{ $key->nama_produk }}" /></td>
 							<td>{{ $key->nama_produk }}</td>
+							<td>{{ $key->merk }}</td>
+							<td>{{ $key->harga_koperasi }}</td>
 							<td style="text-align:center">
 								<a class="btn btn-info" href="{{ route('manajemen-produk.show',$key->id_produkkoperasi) }}">Detail</a>
 								<a class="btn btn-primary" href="{{ route('manajemen-produk.edit',$key->id_produkkoperasi) }}">Edit</a>

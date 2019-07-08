@@ -50,6 +50,8 @@ class ManageKiosController extends Controller
             'email' => 'required',
             'no_hp' => 'required',
             'alamat' => 'required',
+            'rating' => 'required',
+            'id_admin' => 'required',
         ]);
 
         $input = $request->all();

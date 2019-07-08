@@ -90,7 +90,9 @@ class ManageKategoriController extends Controller
     public function update(Request $request, $id_kategori)
     {
         $this->validate($request, [
+            'id_kategori' => 'required',
             'nama_kategori' => 'required',
+            'id_admin' => 'required',
         ]);
     
             $input = $request->all();

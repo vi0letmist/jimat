@@ -98,8 +98,14 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>ID Admin Koperasi :</strong>
-						{!! Form::text('id_adminkoperasi', null, array('placeholder' => 'ID Admin Koperasi','class' => 'form-control')) !!}
+						<strong>Rating :</strong>
+						{!! Form::text('rating', null, array('placeholder' => 'Rating','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>ID Admin :</strong>
+						{!! Form::text('id_admin', null, array('placeholder' => 'ID Admin','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

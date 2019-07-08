@@ -59,6 +59,12 @@
 						{!! Form::text('no_hp', null, array('placeholder' => 'No HP','class' => 'form-control')) !!}
 					</div>
 				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Rating :</strong>
+						{!! Form::text('rating', null, array('placeholder' => 'Rating','class' => 'form-control')) !!}
+					</div>
+				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</div>

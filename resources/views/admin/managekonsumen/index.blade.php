@@ -53,6 +53,7 @@
                         <th style="text-align:center">Email</th>
 						<th style="text-align:center">Password</th>
 						<th style="text-align:center">No HP</th>
+						<th style="text-align:center">Rating</th>
 						<th style="text-align:center">Opsi</th>
 
 					</tr>
@@ -65,6 +66,7 @@
                             <td>{{ $key->email }}</td>
 							<td>{{ $key->password }}</td>
                             <td>{{ $key->no_hp }}</td>
+							<td>{{ $key->rating }}</td>
 
 							<td style="text-align:center">
 								<a class="btn btn-info" href="{{ route('manajemen-konsumen.show',$key->id_konsumen) }}">Detail</a>

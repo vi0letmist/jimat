@@ -48,10 +48,28 @@
 						{!! Form::text('nama_produk', null, array('placeholder' => 'Nama Produk','class' => 'form-control')) !!}
 					</div>
 				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Merk :</strong>
+						{!! Form::text('merk', null, array('placeholder' => 'Merk','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Harga Koperasi :</strong>
+						{!! Form::text('harga_koperasi', null, array('placeholder' => 'Harga Koperasi','class' => 'form-control')) !!}
+					</div>
+				</div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>ID Kategori :</strong>
 						{!! Form::text('id_kategori', null, array('placeholder' => 'ID Kategori','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>ID Admin :</strong>
+						{!! Form::text('id_admin', null, array('placeholder' => 'ID Admin','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">

@@ -46,7 +46,10 @@ class ManageBarangController extends Controller
         $this->validate($request, [
             'nama_produk' => 'required',
             'gambar' => 'required',
+            'merk' => 'required',
+            'harga_koperasi' => 'required',
             'id_kategori' => 'required',
+            'id_admin' => 'required',
         ]);
 
         $input = $request->all();

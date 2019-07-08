@@ -57,6 +57,8 @@ class ManageKonsumenController extends Controller
             'password' => 'required',
             'email' => 'required',
             'no_hp' => 'required',
+            'rating' => 'required',
+            'id_admin' => 'required',
         ]);
 
         $input = $request->all();

@@ -4,7 +4,7 @@
 <div class="container">
         <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+            <a href="/"><b>Admin</b>LTE</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
@@ -34,7 +34,7 @@
                 <div class="col-xs-8">
                 <div class="checkbox icheck">
                     <label>
-                    <input type="checkbox"> Remember Me
+                    <input type="checkbox" name="remember" value="{{ old('remember') ? 'checked' : '' }}"> Remember Me
                     </label>
                 </div>
                 </div>

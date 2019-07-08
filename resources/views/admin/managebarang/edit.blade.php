@@ -47,6 +47,18 @@
 						{!! Form::text('nama_produk', null, array('class' => 'form-control')) !!}
             		</div>
 				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Merk</strong>
+						{!! Form::text('merk', null, array('class' => 'form-control')) !!}
+            		</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Harga Koperasi</strong>
+						{!! Form::text('harga_koperasi', null, array('class' => 'form-control')) !!}
+            		</div>
+				</div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>ID Kategori</strong>
