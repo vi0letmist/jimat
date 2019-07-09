@@ -20,8 +20,8 @@ class ManageAdminController extends Controller
      */
     public function index(Request $request)
     {
-        $admins=Admin::orderBy('id','DESC')->paginate(5);
-        return view('admin.manageadmin.index',compact('admins'))->with('i',($request->input('page',1)-1)*5);
+        $admins=Admin::orderBy('id','DESC')->paginate();
+        return view('admin.manageadmin.index',compact('admins'))->with('i',($request->input('page',1)-1));
     }
 
     /**

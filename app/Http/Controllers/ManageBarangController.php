@@ -64,7 +64,7 @@ class ManageBarangController extends Controller
         
         $barang = Barang::create($input);
         return redirect()->route('manajemen-produk.index')
-        ->with('Sukses','Produk berhasil ditambahkan');
+        ->with('success','Barang berhasil ditambahkan');
     }
 
     /**
@@ -119,7 +119,7 @@ class ManageBarangController extends Controller
         $barang -> update($input);
 
         return redirect()->route('manajemen-produk.index')
-        ->with('Sukses','Produk berhasil diubah');
+        ->with('success','Produk berhasil diubah');
     }
 
     /**
@@ -130,9 +130,8 @@ class ManageBarangController extends Controller
      */
     public function destroy($id_produkkoperasi)
     {
-        
         Barang::find($id_produkkoperasi)->delete();
         return redirect()->route('manajemen-produk.index')
-        ->with('Sukses','Produk berhasil dihapus');
+        ->with('success','Produk berhasil dihapus');
     }
 }

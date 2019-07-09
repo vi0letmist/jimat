@@ -67,7 +67,7 @@
 							<td style="text-align:center">
 								<a class="btn btn-info" href="{{ route('manajemen-produk.show',$key->id_produkkoperasi) }}">Detail</a>
 								<a class="btn btn-primary" href="{{ route('manajemen-produk.edit',$key->id_produkkoperasi) }}">Edit</a>
-								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-produk.destroy', $key->id_koperasi],'style'=>'display:inline']) !!}
+								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-produk.destroy', $key->id_produkkoperasi],'style'=>'display:inline']) !!}
 								{!! Form::submit('Delete', ['class' => 'btn btndanger']) !!}
 								{!! Form::close() !!}
 							</td>

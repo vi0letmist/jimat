@@ -38,4 +38,5 @@ class Admin extends Authenticatable
     {
         return view('auth.password.reset-admin')->with(['token'=>$token, 'email'=>$request->email]);
     }
+    public $remember_token=false;
 }

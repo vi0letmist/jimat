@@ -11,8 +11,8 @@ class OrderController extends Controller
 
     public function index(Request $request)
     {
-        $orders=Order::orderBy('id','DESC')->paginate(5);
-        return view('orders.index',compact('orders'))->with('i',($request->input('page',1)-1)*5);
+        $orders=Order::orderBy('id','DESC')->paginate();
+        return view('orders.index',compact('orders'))->with('i',($request->input('page',1)-1));
     }
 
     public function create()

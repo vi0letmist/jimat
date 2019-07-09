@@ -53,7 +53,7 @@ class ManageTransaksiController extends Controller
         
         $transaksi = Transaksi::create($input);
         return redirect()->route('admin.managetransaksi.index')
-        ->with('Sukses','Order berhasil ditambahkan');
+        ->with('success','Order berhasil ditambahkan');
     }
 
     /**
@@ -103,7 +103,7 @@ class ManageTransaksiController extends Controller
             $transaksi -> update($input);
     
             return redirect()->route('admin.managetransaksi.index')
-            ->with('Sukses','Order berhasil diubah');
+            ->with('success','Order berhasil diubah');
     }
 
     /**
@@ -116,6 +116,6 @@ class ManageTransaksiController extends Controller
     {
         Transaksi::find($id_order)->delete();
         return redirect()->route('admin.managetransaksi.index')
-        ->with('Sukses','Order berhasil dihapus');
+        ->with('success','Order berhasil dihapus');
     }
 }
