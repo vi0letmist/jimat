@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Admin;
 use App\Kios;
+use Mapper;
 
 class ManageKiosController extends Controller
 {
@@ -32,6 +33,17 @@ class ManageKiosController extends Controller
      */
     public function create()
     {
+        Mapper::map(52.381128999999990000, 0.470085000000040000)->marker(53.381128999999990000, -1.470085000000040000, ['markers' => ['symbol' => 'circle', 'scale' => 1000, 'animation' => 'DROP']]);
+
+        // Add information window for each address
+        $collection = Kios::all();
+
+        $collection->each(function($kios)
+        {
+            $content = $kios->nama_kios;
+
+            Mapper::informationWindow($kios->latitude, $kios->longitude, $content);
+        });
         return view('admin.managekios.create');
     }
 

@@ -84,6 +84,10 @@
 						{!! Form::text('status_buka', null, array('placeholder' => 'Status Buka','class' => 'form-control')) !!}
 					</div>
 				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12" style="width: 100%; height: 500px;">
+					
+						{!! Mapper::render() !!}
+				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Longitude :</strong>
