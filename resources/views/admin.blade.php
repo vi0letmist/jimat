@@ -27,7 +27,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>{{ $barang }}</h3>
 
               <p>Produk</p>
             </div>
@@ -42,7 +42,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>50</h3>
+              <h3>{{ $kios }}</h3>
 
               <p>Kios</p>
             </div>
@@ -57,7 +57,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>70</h3>
+              <h3>{{ $konsumen }}</h3>
 
               <p>Konsumen</p>
             </div>
@@ -72,7 +72,7 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3>{{ $transaksi }}</h3>
 
               <p>Transaksi</p>
             </div>

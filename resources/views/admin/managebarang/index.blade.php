@@ -26,7 +26,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-9 col-md-offset-2">
 		<div class="box">
             <div class="box-header">
 			</div>
@@ -48,7 +48,7 @@
 			<table id="table_produk" class="table table-bordered table-hover">
 				<thead>
 					<tr>
-						<th style="text-align:center">No.</th>
+						<th style="text-align:center">ID Barang</th>
 						<th style="text-align:center">Gambar</th>
 						<th style="text-align:center">Nama</th>
 						<th style="text-align:center">Merk</th>
@@ -59,7 +59,7 @@
 				<tbody>
 					@foreach ($barang as $key)
 						<tr>
-							<td style="text-align:center">{{ ++$i }}</td>
+							<td style="text-align:center">{{ $key->id_produkkoperasi }}</td>
 							<td><img width="100" src="{{ URL::to('/uploads/' . $key->gambar) }}" alt="{{ $key->nama_produk }}" /></td>
 							<td>{{ $key->nama_produk }}</td>
 							<td>{{ $key->merk }}</td>

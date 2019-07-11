@@ -38,14 +38,14 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Total :</strong>
-						{!! Form::text('total', null, array('placeholder' => 'Total','class' => 'form-control')) !!}
+						<strong>Sub Total Harga:</strong>
+						{!! Form::text('subtotal_harga', null, array('placeholder' => 'Sub Total Harga','class' => 'form-control')) !!}
 					</div>
 				</div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Sub Total :</strong>
-						{!! Form::text('subtotal', null, array('placeholder' => 'Sub Total','class' => 'form-control')) !!}
+						<strong>Sub Total Harga Total :</strong>
+						{!! Form::text('subtotal_harga_beli', null, array('placeholder' => 'Sub Total Harga Beli','class' => 'form-control')) !!}
 					</div>
 				</div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
