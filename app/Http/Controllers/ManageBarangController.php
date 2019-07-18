@@ -32,6 +32,7 @@ class ManageBarangController extends Controller
      */
     public function create()
     {
+        
         return view('admin.managebarang.create');
     }
 
@@ -44,6 +45,7 @@ class ManageBarangController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'id_produkkoperasi' => 'required|regex:([%06d])',
             'nama_produk' => 'required',
             'gambar' => 'required',
             'merk' => 'required',
@@ -86,6 +88,7 @@ class ManageBarangController extends Controller
      */
     public function edit($id_produkkoperasi)
     {
+        $id_produkkoperasi = sprintf('%06d',$id_produkkoperasi);
         $barang=Barang::find($id_produkkoperasi);
         return view('admin.managebarang.edit',compact('barang'));
     }
@@ -99,6 +102,7 @@ class ManageBarangController extends Controller
      */
     public function update(Request $request, $id_produkkoperasi)
     {
+        $id_produkkoperasi = sprintf('%06d',$id_produkkoperasi);
         $this->validate($request, [
             'nama_produk' => 'required',
             'gambar' => 'required',
@@ -130,6 +134,7 @@ class ManageBarangController extends Controller
      */
     public function destroy($id_produkkoperasi)
     {
+        $id_produkkoperasi = sprintf('%06d',$id_produkkoperasi);
         Barang::find($id_produkkoperasi)->delete();
         return redirect()->route('manajemen-produk.index')
         ->with('success','Produk berhasil dihapus');

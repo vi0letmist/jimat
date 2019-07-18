@@ -65,6 +65,21 @@
 						{!! Form::text('no_hp', null, array('placeholder' => 'No HP','class' => 'form-control')) !!}
 					</div>
 				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12" style="width: 100%; height: 500px;">
+						{!! Mapper::render() !!}
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Longitude :</strong>
+						{!! Form::text('longitude', null, array('placeholder' => 'Longitude','class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Latitude :</strong>
+						{!! Form::text('latitude', null, array('placeholder' => 'Latitude','class' => 'form-control')) !!}
+					</div>
+				</div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Alamat :</strong>

@@ -39,7 +39,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>ID Produk Koperasi :</strong>
-						{!! Form::text('id_produkkoperasi', null, array('placeholder' => 'ID Produk Koperasi','class' => 'form-control')) !!}
+						{!! Form::text('id_produkkoperasi', null, array('placeholder' => 'Contoh inputan: 000001, 000010, 000100','class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">

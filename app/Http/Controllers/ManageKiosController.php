@@ -33,7 +33,7 @@ class ManageKiosController extends Controller
      */
     public function create()
     {
-        Mapper::map(52.381128999999990000, 0.470085000000040000)->circle([['latitude' => 53.381128999999990000, 'longitude' => -1.470085000000040000]], ['strokeColor' => '#000000', 'strokeOpacity' => 0.1, 'strokeWeight' => 2, 'fillColor' => '#FFFFFF', 'radius' => 1000]);
+        Mapper::map(-7.7746111, 110.3737946, ['zoom' => 17, 'markers' => ['title' => 'My Location', 'animation' => 'DROP'], 'clusters' => ['size' => 10, 'center' => true, 'zoom' => 34 ]]);
 
         // Add information window for each address
         $collection = Kios::all();
@@ -93,7 +93,11 @@ class ManageKiosController extends Controller
      */
     public function edit($id_kios)
     {
+        
         $kios=Kios::find($id_kios);
+        $longtd = Kios::where('id_kios',$id_kios)->select('longitude')->first();
+        $latd = Kios::where('id_kios',$id_kios)->select('latitude')->first();
+        Mapper::map($longtd->longitude, $latd->latitude, ['zoom' => 17, 'markers' => ['title' => 'My Location', 'animation' => 'DROP'], 'clusters' => ['size' => 10, 'center' => true, 'zoom' => 34 ]]);
         return view('admin.managekios.edit',compact('kios'));
     }
 
