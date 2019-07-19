@@ -77,6 +77,7 @@ class ManageBarangController extends Controller
      */
     public function show($id_produkkoperasi)
     {
+        $id_produkkoperasi = sprintf('%06d',$id_produkkoperasi);
         $barang = Barang::find($id_produkkoperasi);
         return view('admin.managebarang.show', compact('barang'));
     }

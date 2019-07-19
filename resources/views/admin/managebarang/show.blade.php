@@ -35,7 +35,7 @@
 			<h1>Detail</h1>
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
-					<img width="300" src="{{ URL::to('/uploads//' . $barang->gambar) }}" alt="{{ $barang->nama_produk }}" />
+					<img width="300" src="{{ URL::to('/uploads/' . $barang->gambar) }}" alt="{{ $barang->nama_produk }}" />
 				</div>
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12">
@@ -44,7 +44,18 @@
 				{{ $barang->nama_produk }}
 				</div>
 			</div>
-			
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="form-group">
+					<strong>Merk :</strong>
+				{{ $barang->merk }}
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="form-group">
+					<strong>Harga Koperasi :</strong>
+				{{ $barang->harga_koperasi }}
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
