@@ -60,10 +60,10 @@
 						{!! Form::text('harga_koperasi', null, array('placeholder' => 'Harga Koperasi','class' => 'form-control')) !!}
 					</div>
 				</div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>ID Kategori :</strong>
-						{!! Form::text('id_kategori', null, array('placeholder' => 'ID Kategori','class' => 'form-control')) !!}
+						<strong>Kategori :</strong><br/>
+						{!! Form::select('id_kategori', array('1' => 'Sembako', '2' => 'Minuman', '3' => 'Makanan', '4' => 'Alat Mandi dan Cuci', '5' => 'Gas', '6' => 'Galon')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">

@@ -7,21 +7,24 @@ use App\Http\Controllers\Controller;
 use App\Admin;
 use Hash;
 
-class ManageAdminController extends Controller
+class ProfileController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $admins=Admin::orderBy('id','DESC')->paginate();
-        return view('admin.manageadmin.index',compact('admins'))->with('i',($request->input('page',1)-1));
+        $admin=new Admin;
+        return view('admin.profile.index',compact('admin'));
+    //    $admins=Admin::orderBy('id','DESC')->paginate();
+    //    return view('admin.manageadmin.index',compact('admins'))->with('i',($request->input('page',1)-1));
     }
 
     /**
@@ -31,7 +34,7 @@ class ManageAdminController extends Controller
      */
     public function create()
     {
-        return view('admin.manageadmin.create');
+        return view('admin.profile.create');
     }
 
     /**
@@ -44,7 +47,7 @@ class ManageAdminController extends Controller
     {
         $this->validate($request, [
             'name'=>'required',
-            'email'=>'required|mail|unique:admins',
+            'email'=>'required|mail|unique:users,email',
             'password'=>'required|min:6|same:confirm-password',
             ]);
 
@@ -53,7 +56,7 @@ class ManageAdminController extends Controller
 
         $admin = Admin::create($input);
 
-        return redirect()->route('manajemen-admin.index')->with('success','Admin Successfully added');
+        return redirect()->route('profile.index')->with('success','Admin Successfully added');
     }
 
     /**
@@ -65,7 +68,7 @@ class ManageAdminController extends Controller
     public function show($id)
     {
         $admin = Admin::find($id);
-        return view('admin.manageadmin.show', compact('admin'));
+        return view('admin.profile.show', compact('admin'));
     }
 
     /**
@@ -77,7 +80,7 @@ class ManageAdminController extends Controller
     public function edit($id)
     {
         $admin=Admin::find($id);
-        return view('admin.manageadmin.edit',compact('admin'));
+        return view('admin.profile.edit',compact('admin'));
     }
 
     /**
@@ -105,8 +108,7 @@ class ManageAdminController extends Controller
     $admin = Admin::find($id);
     $admin->update($input);
 
-    return redirect()->route('manajemen-admin.index')
-    ->with('success','Admin successfully updated');
+    return redirect()->back()->with('success','Admin successfully updated');
     }
 
     /**
@@ -118,7 +120,7 @@ class ManageAdminController extends Controller
     public function destroy($id)
     {
         Admin::find($id)->delete();
-        return redirect()->route('manajemen-admin.index')
+        return redirect()->route('profile.index')
         ->with('success','Admin successfully deleted');
     }
 }

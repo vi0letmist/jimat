@@ -88,7 +88,7 @@ desired effect
             <ul class="dropdown-menu">
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="/admin/profile/{{Auth::user()->id}}" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
                   @yield('logout')
