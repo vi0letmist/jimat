@@ -341,7 +341,7 @@ desired effect
 <script>
   $(function () {
     $('#example1').DataTable()
-    $('#table_konsumen, #table_produk, #table_kios, #table_kategori, #table_transaksi, #table_admins').DataTable({
+    $('#table_konsumen, #table_produk, #table_kios, #table_kategori, #table_transaksi, #table_admins, #table_stok').DataTable({
       'paging'      : true,
       'lengthChange': true,
       'searching'   : true,
@@ -350,6 +350,9 @@ desired effect
       'autoWidth'   : true
     })
   })
+</script>
+<script type="text/javascript">
+  $(".clsfocus").focus();
 </script>
 </body>
 </html>

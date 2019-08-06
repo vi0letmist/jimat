@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('logout')
 <a href="{{ route('admin.logout') }}"
@@ -38,7 +38,7 @@
 			<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Nama Kios :</strong>
-						{!! Form::text('nama_kios', null, array('placeholder' => 'Nama Kios','class' => 'form-control')) !!}
+						{!! Form::text('nama_kios', null, array('placeholder' => 'Nama Kios','class' => 'form-control clsfocus')) !!}
 					</div>
 				</div>
                 <div class="col-xs-12 col-sm-12 col-md-12">

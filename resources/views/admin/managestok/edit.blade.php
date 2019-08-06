@@ -13,7 +13,7 @@
 
 @section('header')
 <section class="content-header">
-  <h1>Manajemen Konsumen</h1>
+  <h1>Manajemen Stok</h1>
 </section>
 @endsection
 
@@ -33,36 +33,48 @@
 			</div>
 			@endif
 
-			{!! Form::model($konsumen, ['method' => 'PATCH','route' => ['manajemen-konsumen.update', $konsumen->id_konsumen]]) !!}
+			{!! Form::model($stok, ['method' => 'PATCH','route' => ['manajemen-stok.update', $stok->id_stockkoperasi]]) !!}
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12">
+			    <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Nama Konsumen:</strong>
-						{!! Form::text('nama', null, array('placeholder' => 'Nama Konsumen','class' => 'form-control clsfocus')) !!}
+						<strong>ID Produk Koperasi</strong>
+						{!! Form::text('id_stockkoperasi', null, array('class' => 'form-control clsfocus')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Email :</strong>
-						{!! Form::text('email', null, array('placeholder' => 'Email','class' => 'form-control')) !!}
+						<strong>Nama Produk</strong>
+						{!! Form::text('nama_produk', null, array('class' => 'form-control')) !!}
+            		</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Merk</strong>
+						{!! Form::text('merk', null, array('class' => 'form-control')) !!}
+            		</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Harga Koperasi</strong>
+						{!! Form::text('harga_koperasi', null, array('class' => 'form-control')) !!}
+            		</div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Stok</strong>
+						{!! Form::text('stok', null, array('class' => 'form-control')) !!}
+            		</div>
+				</div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>ID Kategori</strong>
+						{!! Form::text('id_kategori', null, array('class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
-						<strong>Password :</strong>
-						{!! Form::password('password', null, array('placeholder' => 'Password','class' => 'form-control')) !!}
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="form-group">
-						<strong>No HP :</strong>
-						{!! Form::text('no_hp', null, array('placeholder' => 'No HP','class' => 'form-control')) !!}
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<div class="form-group">
-						<strong>Rating :</strong>
-						{!! Form::text('rating', null, array('placeholder' => 'Rating','class' => 'form-control')) !!}
+						<strong>Gambar :</strong>
+						{!! Form::file('gambar', null, array('class' => 'custom-file-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -11,7 +11,7 @@
         <ul class="treeview-menu">
         <li><a href="/admin/manajemen-kategori">Kategori</a></li>
         <li><a href="/admin/manajemen-produk">Barang</a></li>
-        <li><a href="merk">Merk</a></li>
+        <li><a href="/admin/manajemen-stok">Stok</a></li>
         </ul>
     </li>
     <li><a href="/admin/manajemen-kios"><i class="fa fa-link"></i> <span>Manajemen Kios</span></a></li>

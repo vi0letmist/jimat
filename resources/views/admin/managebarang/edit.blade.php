@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('logout')
 <a href="{{ route('admin.logout') }}"
@@ -38,7 +38,7 @@
 			    <div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>ID Produk Koperasi</strong>
-						{!! Form::text('id_produkkoperasi', null, array('class' => 'form-control')) !!}
+						{!! Form::text('id_produkkoperasi', null, array('class' => 'form-control clsfocus')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">

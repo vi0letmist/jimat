@@ -23,7 +23,7 @@ class ManageBarangController extends Controller
     public function index(Request $request)
     {
         $barang=Barang::orderBy('id_produkkoperasi','DESC')->paginate();
-        return view('admin.managebarang.index',compact('barang'))->with('i',($request->input('page',1)-1));
+        return view('admin.managebarang.index',compact('barang'))->with(($request->input('page',1)-1));
     }
     /**
      * Show the form for creating a new resource.

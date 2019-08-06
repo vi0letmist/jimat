@@ -100,5 +100,9 @@
         });
     });
     </script>
+    
+<script type="text/javascript">
+  $(".clsfocus").focus();
+</script>
 </body>
 </html>
