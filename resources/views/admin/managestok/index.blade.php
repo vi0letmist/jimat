@@ -50,8 +50,10 @@
 						{!! Form::text('id_stockkoperasi', null, array('placeholder' => 'ID BARCODEx','class' => 'form-control')) !!}
 					</div>
                 </div>
-				<div class="col-xs-12 col-sm-12 col-md-12 text-center">
-					<button type="submit" class="btn btn-primary">Submit</button>
+				<div class="col-lg-4">
+					<div class="form-group">
+					<button type="submit" class="btn btn-primary">Tambah</button>
+					</div>
 				</div>
 			</div>
 			{!! Form::close() !!}
@@ -76,7 +78,7 @@
 							<td>{{ $key->merk }}</td>
 							<td>{{ $key->stok }}</td>
 							<td style="text-align:center">
-								<a class="btn btn-info" href="{{ route('manajemen-produk.show',$key->id_stockkoperasi) }}">Detail</a>
+								<a class="btn btn-info" href="{{ route('manajemen-stok.show',$key->id_stockkoperasi) }}">Detail</a>
 								<a class="btn btn-primary" href="{{ route('manajemen-stok.edit',$key->id_stockkoperasi) }}">Edit</a>
 								{!! Form::open(['method' => 'DELETE','route' =>	['manajemen-stok.destroy', $key->id_stockkoperasi],'style'=>'display:inline']) !!}
 								{!! Form::submit('Delete', ['class' => 'btn btndanger']) !!}

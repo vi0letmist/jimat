@@ -73,8 +73,20 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
+						<strong>ID Produk Koperasi</strong>
+						{!! Form::text('id_produkkoperasi', null, array('class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>ID Admin</strong>
+						{!! Form::text('id_admin', null, array('class' => 'form-control')) !!}
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
 						<strong>Gambar :</strong>
-						{!! Form::file('gambar', null, array('class' => 'custom-file-control')) !!}
+						{!! Form::text('gambar', null, array('class' => 'form-control')) !!}
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -79,7 +79,6 @@ class ManageStokController extends Controller
      */
     public function edit($id_stockkoperasi)
     {
-       
         $stok=Stok::find($id_stockkoperasi);
         return view('admin.managestok.edit',compact('stok'));
     }
@@ -91,20 +90,32 @@ class ManageStokController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id_stockkoperasi)
     {
         $this->validate($request, [
             'id_stockkoperasi' => 'required',
-            'stok' => 'required'
+            'nama_produk' => 'required',
+            'merk' => 'required',
+            'stok' => 'required',
+            'harga_koperasi' => 'required',
+            'id_kategori' => 'required',
+            'id_produkkoperasi' => 'required',
         ]);
-           
-        $stok = Stok::find($request->id_stockkoperasi);
 
-        dd($stok);
-        $stok -> update($request->stok);
-
+        $input = $request->all();
+        $imageName = '';
+        if ($request->hasFile('image')) {
+        $imageExtension = $request->file('image')->getClientOriginalExtension();
+        $imageName = 'image_'.time().'.'.$imageExtension;
+        $imageDestination = base_path() . '/public/uploads';
+        $request->file('image')->move($imageDestination, $imageName);
+        $input['image'] = $imageName;
+        }
+        
+        $stok = Stok::find($id_stockkoperasi);
+        $stok -> update($input);
         return redirect()->route('manajemen-stok.index')
-        ->with('success','Produk berhasil diubah');
+        ->with('success','Stok berhasil diperbarui');
     }
 
     /**
