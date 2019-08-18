@@ -101,3 +101,21 @@
       </div>
     </section>
 @endsection
+@section('js')
+    <script>
+      $(function () {
+        var area = new Morris.Area({
+          element: 'revenue-chart',
+          resize: true,
+          data: [
+            <?php echo $chart2 ?>
+          ],
+          xkey: 'y',
+          ykeys: ['item1'],
+          labels: ['Item 1'],
+          lineColors: ['#3c8dbc'],
+          hideHover: 'auto'
+        });
+      })
+    </script>
+@endsection
